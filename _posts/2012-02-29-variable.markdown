@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Variable"
+categories: javascript
+---
+
+Variables are declared using the keyword "var". For instance, the following statement creates a variable named "message":
+
+```javascript
+var message;
+```
+
+message holds the value "undefined" because no initial value is assigned to it. To notice that, if a variable is undeclared, it's also undefined.
+
+```javascript
+var message;
+
+typeof message;           // "undefined"
+typeof messageUndeclared; // "undefined"
+```
+
+However, an undeclared variable is different from an variable holding "undefined" value. Trying to use un undeclared variable may cause exceptions.
+
+```javascript
+var message;
+
+alert(message);           // "undefined"
+alert(messageUndeclared); // "Uncaught ReferenceError: messageUndeclared is not defined"
+```
+
+Variable is defined at where "var" statement is executed. Do not access a variable declared afterwards because at that point, the variable isn't available yet.
+
+```javascript
+var a = 5;
+(function() {
+	console.log("a is " + (typeof a));    // "a is number"
+	console.log("b is " + (typeof b));    // "b is undefined"
+}());
+var b = 6;
+```
+
+It's noteworthy that assigning value to an undeclared variable accidentally creates a variable in the global scope.
+
+```javascript
+(function() {
+	b = 6;
+}());
+console.log(window.b);   // "6"
+```

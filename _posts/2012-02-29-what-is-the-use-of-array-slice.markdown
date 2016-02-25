@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "What's the use of Array.prototype.slice.call(arguments)?!"
+title:  "What's the use of Array.prototype.slice.call(arguments)?"
 categories: javascript
 ---
 
