@@ -47,17 +47,15 @@ In the example below, all the tag selector, the class selector and the ID select
 div {
 	border: none;
 }
-
 .red {
 	border: 2px solid dashed #f00;
 }
-
 #main {
 	border: 5px solid teal;
 }
 ```
 
-![Cascading Selector]({{site.url}}/assets/2012-03-07-css-selector-1.png "id selector")
+![Cascading Selector](/assets/2012-03-07-css-selector-1.png "id selector")
 
 The specificity is calculated by counting the respective occurs of ID attributes, class attributes and tag attributes in the selector. And then write the three numbers in exact order with no spaces or commas to obtain a three digit number. The selector of larger number is applied. See, #main wins in the compete. 
 

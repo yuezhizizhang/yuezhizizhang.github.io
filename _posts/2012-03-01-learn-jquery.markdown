@@ -63,7 +63,7 @@ So, an alternative to setInterval is as below. The following function invokes it
 
 propFix is simply an object containing some name-value pairs. It magically does some translations so that you are able to access, say, a class attribute via "jQuery('#id').attr('class')". On a DOM element, you know, class attribute is actually named className, because class is a reserved word. With the help of propFix, you don't have to worry about these spelling issues anymore. What's more, you are able to add some default properties in propFix so that you can use them natively.
 
-![propFix]({{site.url}}/assets/2012-03-02-variable-propfix.png "propFix")
+![propFix](/assets/2012-03-02-variable-propfix.png "propFix")
 
 **4. CSS Selectors**
 
