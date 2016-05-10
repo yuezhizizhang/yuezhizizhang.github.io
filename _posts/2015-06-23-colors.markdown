@@ -1,0 +1,338 @@
+---
+layout: post
+title:  "Colors"
+categories: css
+---
+
+
+<table border="0" cellpadding="5" cellspacing="0">
+	<tr>
+		<td bgcolor="#FAEBD7">FAEBD7</td>
+		<td bgcolor="#FAEBD7">AntiqueWhite</td>
+		<td></td>
+		<td bgcolor="#00FFFF">00FFFF</td>
+		<td bgcolor="#00FFFF">Aqua</td>
+		<td></td>
+		<td bgcolor="#7FFFD4">7FFFD4</td>
+		<td bgcolor="#7FFFD4">Aquamarine</td>
+		<td></td>
+		<td bgcolor="#FFEBCD">FFEBCD</td>
+		<td bgcolor="#FFEBCD">BlanchedAlmond</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#8A2BE2">8A2BE2</td>
+		<td bgcolor="#8A2BE2">BlueViolet</td>
+		<td></td>
+		<td bgcolor="#A52A2A">A52A2A</td>
+		<td bgcolor="#A52A2A">Brown</td>
+		<td></td>
+		<td bgcolor="#DEB887">DEB887</td>
+		<td bgcolor="#DEB887">BurlyWood</td>
+		<td></td>
+		<td bgcolor="#5F9EA0">5F9EA0</td>
+		<td bgcolor="#5F9EA0">CadetBlue</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#7FFF00">7FFF00</td>
+		<td bgcolor="#7FFF00">Chartreuse</td>
+		<td></td>
+		<td bgcolor="#D2691E">D2691E</td>
+		<td bgcolor="#D2691E">Chocolate</td>
+		<td></td>
+		<td bgcolor="#FF7F50">FF7F50</td>
+		<td bgcolor="#FF7F50">Coral</td>
+		<td></td>
+		<td bgcolor="#6495ED">6495ED</td>
+		<td bgcolor="#6495ED">CornflowerBlue</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#FFF8DC">FFF8DC</td>
+		<td bgcolor="#FFF8DC">Cornsilk</td>
+		<td></td>
+		<td bgcolor="#DC143C">DC143C</td>
+		<td bgcolor="#DC143C">Crimson</td>
+		<td></td>
+		<td bgcolor="#00008B">00008B</td>
+		<td bgcolor="#00008B">DarkBlue</td>
+		<td></td>
+		<td bgcolor="#008B8B">008B8B</td>
+		<td bgcolor="#008B8B">DarkCyan</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#B8860B">B8860B</td>
+		<td bgcolor="#B8860B">DarkGoldenrod</td>
+		<td></td>
+		<td bgcolor="#A9A9A9">A9A9A9</td>
+		<td bgcolor="#A9A9A9">DarkGray</td>
+		<td></td>
+		<td bgcolor="#006400">006400</td>
+		<td bgcolor="#006400">DarkGreen</td>
+		<td></td>
+		<td bgcolor="#8B008B">8B008B</td>
+		<td bgcolor="#8B008B">DarkMagenta</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#FF8C00">FF8C00</td>
+		<td bgcolor="#FF8C00">DarkOrange</td>
+		<td></td>
+		<td bgcolor="#9932CC">9932CC</td>
+		<td bgcolor="#9932CC">DarkOrchid</td>
+		<td></td>
+		<td bgcolor="#8B0000">8B0000</td>
+		<td bgcolor="#8B0000">DarkRed</td>
+		<td></td>
+		<td bgcolor="#8FBC8F">8FBC8F</td>
+		<td bgcolor="#8FBC8F">DarkSeaGreen</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#483D8B">483D8B</td>
+		<td bgcolor="#483D8B">DarkSlateBlue</td>
+		<td></td>
+		<td bgcolor="#2F4F4F">2F4F4F</td>
+		<td bgcolor="#2F4F4F">DarkSlateGray</td>
+		<td></td>
+		<td bgcolor="#FF1493">FF1493</td>
+		<td bgcolor="#FF1493">DeepPink</td>
+		<td></td>
+		<td bgcolor="#00BFFF">00BFFF</td>
+		<td bgcolor="#00BFFF">DeepSkyBlue</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#696969">696969</td>
+		<td bgcolor="#696969">DimGray</td>
+		<td></td>
+		<td bgcolor="#1E90FF">1E90FF</td>
+		<td bgcolor="#1E90FF">DodgerBlue</td>
+		<td></td>
+		<td bgcolor="#B22222">B22222</td>
+		<td bgcolor="#B22222">Firebrick</td>
+		<td></td>
+		<td bgcolor="#228B22">228B22</td>
+		<td bgcolor="#228B22">ForestGreen</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#FFD700">FFD700</td>
+		<td bgcolor="#FFD700">Gold</td>
+		<td></td>
+		<td bgcolor="#DAA520">DAA520</td>
+		<td bgcolor="#DAA520">Goldenrod</td>
+		<td></td>
+		<td bgcolor="#008000">008000</td>
+		<td bgcolor="#008000">Green</td>
+		<td></td>
+		<td bgcolor="#ADFF2F">ADFF2F</td>
+		<td bgcolor="#ADFF2F">GreenYellow</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#FF69B4">FF69B4</td>
+		<td bgcolor="#FF69B4">HotPink</td>
+		<td></td>
+		<td bgcolor="#CD5C5C">CD5C5C</td>
+		<td bgcolor="#CD5C5C">IndianRed</td>
+		<td></td>
+		<td bgcolor="#4B0082">4B0082</td>
+		<td bgcolor="#4B0082">Indigo</td>
+		<td></td>
+		<td bgcolor="#FFFFF0">FFFFF0</td>
+		<td bgcolor="#FFFFF0">Ivory</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#E6E6FA">E6E6FA</td>
+		<td bgcolor="#E6E6FA">Lavender</td>
+		<td></td>
+		<td bgcolor="#FFFACD">FFFACD</td>
+		<td bgcolor="#FFFACD">LemonChiffon</td>
+		<td></td>
+		<td bgcolor="#ADD8E6">ADD8E6</td>
+		<td bgcolor="#ADD8E6">LightBlue</td>
+		<td></td>
+		<td bgcolor="#F08080">F08080</td>
+		<td bgcolor="#F08080">LightCoral</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#FAFAD2">FAFAD2</td>
+		<td bgcolor="#FAFAD2">LightGoldenrodYellow</td>
+		<td></td>
+		<td bgcolor="#90EE90">90EE90</td>
+		<td bgcolor="#90EE90">LightGreen</td>
+		<td></td>
+		<td bgcolor="#FFB6C1">FFB6C1</td>
+		<td bgcolor="#FFB6C1">LightPink</td>
+		<td></td>
+		<td bgcolor="#FFA07A">FFA07A</td>
+		<td bgcolor="#FFA07A">LightSalmon</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#20B2AA">20B2AA</td>
+		<td bgcolor="#20B2AA">LightSeaGreen</td>
+		<td></td>
+		<td bgcolor="#87CEFA">87CEFA</td>
+		<td bgcolor="#87CEFA">LightSkyBlue</td>
+		<td></td>
+		<td bgcolor="#FFFFE0">FFFFE0</td>
+		<td bgcolor="#FFFFE0">LightYellow</td>
+		<td></td>
+		<td bgcolor="#32CD32">32CD32</td>
+		<td bgcolor="#32CD32">LimeGreen</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#66CDAA">66CDAA</td>
+		<td bgcolor="#66CDAA">MediumAquamarine</td>
+		<td></td>
+		<td bgcolor="#0000CD">0000CD</td>
+		<td bgcolor="#0000CD">MediumBlue</td>
+		<td></td>
+		<td bgcolor="#BA55D3">BA55D3</td>
+		<td bgcolor="#BA55D3">MediumOrchid</td>
+		<td></td>
+		<td bgcolor="#3CB371">3CB371</td>
+		<td bgcolor="#3CB371">MediumSeaGreen</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#48D1CC">48D1CC</td>
+		<td bgcolor="#48D1CC">MediumTurquoise</td>
+		<td></td>
+		<td bgcolor="#C71585">C71585</td>
+		<td bgcolor="#C71585">MediumVioletRed</td>
+		<td></td>
+		<td bgcolor="#191970">191970</td>
+		<td bgcolor="#191970">MidnightBlue</td>
+		<td></td>
+		<td bgcolor="#FFE4E1">FFE4E1</td>
+		<td bgcolor="#FFE4E1">MistyRose</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#6B8E23">6B8E23</td>
+		<td bgcolor="#6B8E23">OliveDrab</td>
+		<td></td>
+		<td bgcolor="#FFA500">FFA500</td>
+		<td bgcolor="#FFA500">Orange</td>
+		<td></td>
+		<td bgcolor="#FF4500">FF4500</td>
+		<td bgcolor="#FF4500">OrangeRed</td>
+		<td></td>
+		<td bgcolor="#AFEEEE">AFEEEE</td>
+		<td bgcolor="#AFEEEE">PaleTurquoise</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#FFC0CB">FFC0CB</td>
+		<td bgcolor="#FFC0CB">Pink</td>
+		<td></td>
+		<td bgcolor="#B0E0E6">B0E0E6</td>
+		<td bgcolor="#B0E0E6">PowderBlue</td>
+		<td></td>
+		<td bgcolor="#4169E1">4169E1</td>
+		<td bgcolor="#4169E1">RoyalBlue</td>
+		<td></td>
+		<td bgcolor="#8B4513">8B4513</td>
+		<td bgcolor="#8B4513">SaddleBrown</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#F4A460">F4A460</td>
+		<td bgcolor="#F4A460">SandyBrown</td>
+		<td></td>
+		<td bgcolor="#2E8B57">2E8B57</td>
+		<td bgcolor="#2E8B57">SeaGreen</td>
+		<td></td>
+		<td bgcolor="#C0C0C0">C0C0C0</td>
+		<td bgcolor="#C0C0C0">Silver</td>
+		<td></td>
+		<td bgcolor="#87CEEB">87CEEB</td>
+		<td bgcolor="#87CEEB">SkyBlue</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#008080">008080</td>
+		<td bgcolor="#008080">Teal</td>
+		<td></td>
+		<td bgcolor="#D8BFD8">D8BFD8</td>
+		<td bgcolor="#D8BFD8">Thistle</td>
+		<td></td>
+		<td bgcolor="#FF6347">FF6347</td>
+		<td bgcolor="#FF6347">Tomato</td>
+		<td></td>
+		<td bgcolor="#40E0D0">40E0D0</td>
+		<td bgcolor="#40E0D0">Turquoise</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#EE82EE">EE82EE</td>
+		<td bgcolor="#EE82EE">Violet</td>
+		<td></td>
+		<td bgcolor="#F5DEB3">F5DEB3</td>
+		<td bgcolor="#F5DEB3">Wheat</td>
+		<td></td>
+		<td bgcolor="#F5F5F5">F5F5F5</td>
+		<td bgcolor="#F5F5F5">WhiteSmoke</td>
+		<td></td>
+		<td bgcolor="#9ACD32">9ACD32</td>
+		<td bgcolor="#9ACD32">YellowGreen</td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#008299">008299</td>
+		<td bgcolor="#008299"></td>
+		<td></td>
+		<td bgcolor="#2672EC">2672EC</td>
+		<td bgcolor="#2672EC"></td>
+		<td></td>
+		<td bgcolor="#8C0095">8C0095</td>
+		<td bgcolor="#8C0095"></td>
+		<td></td>
+		<td bgcolor="#5133AB">5133AB</td>
+		<td bgcolor="#5133AB"></td>
+		<td></td>
+	</tr>
+	<tr height="10"></tr>
+	<tr>
+		<td bgcolor="#AC193D">AC193D</td>
+		<td bgcolor="#AC193D"></td>
+		<td></td>
+		<td bgcolor="#D24726">D24726</td>
+		<td bgcolor="#D24726"></td>
+		<td></td>
+		<td bgcolor="#008A00">008A00</td>
+		<td bgcolor="#008A00"></td>
+		<td></td>
+		<td bgcolor="#094AB2">094AB2</td>
+		<td bgcolor="#094AB2"></td>
+		<td></td>
+	</tr>
+</table>
