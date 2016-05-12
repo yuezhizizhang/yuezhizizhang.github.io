@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Learn jQuery source codes with Paul Irish"
-categories: javascript jquery
+categories: javascript, jquery
 ---
 
 Here is a video by Paul Irish explaining some details about jQuery source codes. Personally, I was amused while watching this video. I particularly like all of the unexpected laughs throughout the presentation. Haa....

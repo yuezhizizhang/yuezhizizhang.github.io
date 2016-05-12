@@ -33,8 +33,8 @@ Variable is defined at where "var" statement is executed. Do not access a variab
 ```javascript
 var a = 5;
 (function() {
-	console.log("a is " + (typeof a));    // "a is number"
-	console.log("b is " + (typeof b));    // "b is undefined"
+    console.log("a is " + (typeof a));    // "a is number"
+    console.log("b is " + (typeof b));    // "b is undefined"
 }());
 var b = 6;
 ```
@@ -43,7 +43,7 @@ It's noteworthy that assigning value to an undeclared variable accidentally crea
 
 ```javascript
 (function() {
-	b = 6;
+    b = 6;
 }());
 console.log(window.b);   // "6"
 ```

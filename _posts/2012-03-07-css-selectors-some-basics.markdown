@@ -34,24 +34,24 @@ In the example below, all the tag selector, the class selector and the ID select
 
 ```html
 <div id="main" class="red">
-	<ol>
-		<li>Arctic</li>
-		<li>Atlantic</li>
-		<li>Pacific</li>
-		<li>Indian</li>
-		<li>Southern</li>
-	</ol>
+    <ol>
+        <li>Arctic</li>
+        <li>Atlantic</li>
+        <li>Pacific</li>
+        <li>Indian</li>
+        <li>Southern</li>
+    </ol>
 </div>
 ```
 ```css
 div {
-	border: none;
+    border: none;
 }
 .red {
-	border: 2px solid dashed #f00;
+    border: 2px solid dashed #f00;
 }
 #main {
-	border: 5px solid teal;
+    border: 5px solid teal;
 }
 ```
 

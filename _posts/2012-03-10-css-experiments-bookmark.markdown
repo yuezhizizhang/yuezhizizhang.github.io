@@ -13,20 +13,20 @@ As you can see, the photo is positioned on the top-left of the page. To do that,
 
 ```html
 <div class="image">
-	<img src="img/tree.jpg" alt="A flowering tree"/>
+    <img src="img/tree.jpg" alt="A flowering tree"/>
 </div>
 ```
 
 ```css
 .image {
-	background: white;
-	border: 1px solid #D1D1D1;
-	float: left;
-	padding: 5px;
-	margin: 20px 10px 0 20px;
-	-moz-box-shadow: 0px 1px 2px #D1D1D1;
-	-webkit-box-shadow: 0px 1px 2px #D1D1D1;
-	box-shadow: 0px 1px 2px #D1D1D1;
+    background: white;
+    border: 1px solid #D1D1D1;
+    float: left;
+    padding: 5px;
+    margin: 20px 10px 0 20px;
+    -moz-box-shadow: 0px 1px 2px #D1D1D1;
+    -webkit-box-shadow: 0px 1px 2px #D1D1D1;
+    box-shadow: 0px 1px 2px #D1D1D1;
 }
 ```
 
@@ -36,17 +36,17 @@ There are many issues related to float. One of them is how floated element can a
 
 ```html
 <aside>
-	<p>It collapses parent container.</p>
+    <p>It collapses parent container.</p>
 </aside>
 ```
 
 ```css
 aside {
-	border: 2px solid teal;
+    border: 2px solid teal;
 }
 
 p {
-	float: left;
+    float: left;
 }
 ```
 
@@ -56,8 +56,8 @@ To solve this bizarre issue, just set parent's "overflow:auto". CSS overflow pro
 
 ```css
 aside {
-	border: 2px solid teal;
-	overflow: auto;
+    border: 2px solid teal;
+    overflow: auto;
 }
 ```
 
@@ -70,10 +70,10 @@ To make the poem looks like written on a piece of letter paper, I have added som
 
 ```css
 p {
-	line-height: 1.5em;
-	margin: 0;
-	border-bottom: 1px solid #D1D1D1;
-	border-top: 1px solid #FFF;
+    line-height: 1.5em;
+    margin: 0;
+    border-bottom: 1px solid #D1D1D1;
+    border-top: 1px solid #FFF;
 }
 ```
 
@@ -85,11 +85,11 @@ To remove these unwanted borders, I resort to the pseudo selector nth-child. I r
 
 ```css
 p:nth-child(5n+1) {
-	border-top: none;
+    border-top: none;
 }
 
 p:nth-child(5n+5) {
-	border-bottom: none;
+    border-bottom: none;
 }
 ```
 
@@ -98,14 +98,14 @@ Casting some drop shadows off the boxes make them look 3D.
 
 ```css
 .image {
-	background: white;
-	border: 1px solid #D1D1D1;
-	float: left;
-	padding: 5px;
-	margin: 20px 10px 0 10px;
-	-moz-box-shadow: 0px 1px 2px #D1D1D1;
-	-webkit-box-shadow: 0px 1px 2px #D1D1D1;
-	box-shadow: 0px 1px 2px #D1D1D1;
+    background: white;
+    border: 1px solid #D1D1D1;
+    float: left;
+    padding: 5px;
+    margin: 20px 10px 0 10px;
+    -moz-box-shadow: 0px 1px 2px #D1D1D1;
+    -webkit-box-shadow: 0px 1px 2px #D1D1D1;
+    box-shadow: 0px 1px 2px #D1D1D1;
 }
 ```
 
@@ -115,12 +115,12 @@ In a similar way, we are able to drop the text shadow.
 
 ```css
 .footer p {
-	font: bold 12px sans-serif;
-	text-shadow: 1px 1px 1px #666;
-	color: #FFF;
-	line-height: 3em;
-	text-align: right;
-	border: none;
+    font: bold 12px sans-serif;
+    text-shadow: 1px 1px 1px #666;
+    color: #FFF;
+    line-height: 3em;
+    text-align: right;
+    border: none;
 }
 ```
 
@@ -129,12 +129,12 @@ Gradient background is still an experimental feature. Therefore, we have to add 
 
 ```css
 .footer {
-	padding: 0 10px;
-	background-image: -moz-linear-gradient(top, #658F88, #31796C);
-	background-image: -webkit-linear-gradient(top, #658F88, #31796C);
-	background-image: -ms-linear-gradient(top, #658F88, #31796C);
-	background-image: -o-linear-gradient(top, #658F88, #31796C);
-	border-radius: 0 0 .5em .5em;
+    padding: 0 10px;
+    background-image: -moz-linear-gradient(top, #658F88, #31796C);
+    background-image: -webkit-linear-gradient(top, #658F88, #31796C);
+    background-image: -ms-linear-gradient(top, #658F88, #31796C);
+    background-image: -o-linear-gradient(top, #658F88, #31796C);
+    border-radius: 0 0 .5em .5em;
 }
 ```
 

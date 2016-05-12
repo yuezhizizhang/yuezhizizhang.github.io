@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "vim Frequently Used Commands"
-categories: css
+categories: linux
 ---
 
 <table border="1" cellspacing="0" cellpadding="5">

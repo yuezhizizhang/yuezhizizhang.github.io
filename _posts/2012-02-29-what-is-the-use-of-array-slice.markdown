@@ -6,7 +6,7 @@ categories: javascript
 
 ```javascript
 function makeArray() {
-	return Array.prototype.slice.call(arguments);
+    return Array.prototype.slice.call(arguments);
 }
 ```
 makeArray() returns an actual array, which is a copy of arguments. Arguments isn't an real array, even though it has a length property and could be accessed through array indexes. 

@@ -20,18 +20,18 @@ The content consisting the navigation bar is an unordered list:
 
 ```html
 <ul>
-	<li class="corner-left clear-border-right">
-		<a class="ipad" href="#" title="iPad"></a>
-	</li>
-	<li class="clear-border-right">
-		<a class="iphone" href="#" title="iPhone"></a>
-	</li>
-	<li class="clear-border-right">
-		<a class="ipod" href="#" title="iPod"></a>
-	</li>
-	<li class="corner-right">
-		<a class="macbook" href="#" title="MacBook"></a>
-	</li>
+    <li class="corner-left clear-border-right">
+        <a class="ipad" href="#" title="iPad"></a>
+    </li>
+    <li class="clear-border-right">
+        <a class="iphone" href="#" title="iPhone"></a>
+    </li>
+    <li class="clear-border-right">
+        <a class="ipod" href="#" title="iPod"></a>
+    </li>
+    <li class="corner-right">
+        <a class="macbook" href="#" title="MacBook"></a>
+    </li>
 </ul>
 ```
 
@@ -39,7 +39,7 @@ To align the unordered list horizontally, the tip is to set the list element's d
 
 ```css
 li {
-	display: inline-block;
+    display: inline-block;
 }
 ```
 
@@ -51,10 +51,10 @@ Next, I set the sprite image as the background image of the anchor element itsel
 
 ```css
 .ipad, .iphone, .ipod, .macbook {
-	display: block;
-	width: 64px;
-	height: 64px;
-	background: url("../img/sprite.png") no-repeat;
+    display: block;
+    width: 64px;
+    height: 64px;
+    background: url("../img/sprite.png") no-repeat;
 }
 ```
 
@@ -62,7 +62,7 @@ Each anchor element displays only a part of the whole background. For example, t
 
 ```css
 .iphone {
-	background-position: -64px 0;
+    background-position: -64px 0;
 }
 ```
 

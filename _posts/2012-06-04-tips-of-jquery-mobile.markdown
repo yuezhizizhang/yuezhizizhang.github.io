@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Tips of jQuery Mobile"
-categories: css
+categories: jquery, jquery-mobile
 ---
 
 I have been intensively working with jQuery Mobile during recent days. Following are some of the tips I grasp via using this library.
@@ -14,7 +14,7 @@ It enables programmatically change from one page to another. That implies your J
 
 ```javascript
 $.mobile.changePage('home.html', {
-	transition: "slide"
+    transition: "slide"
 });
 ```
 
@@ -24,11 +24,12 @@ By taking a closer look of jQuery Mobile codes, we could find out what has been 
 
 ```javascript
 $.ajax({
-	url: fileUrl,
-	type: settings.type,
-	data: settings.data,
-	dataType: "html",
-	success: function( html, textStatus, xhr) {
+    url: fileUrl,
+    type: settings.type,
+    data: settings.data,
+    dataType: "html",
+    success: function( html, textStatus, xhr) {
+    ...
 ```
 
 By default, Ajax request type is 'GET' and data is 'undefined'. All these default configurations could be rewritten via the second parameter of  $.mobile.changePage method. In addition, cross-domain Ajax request is disallowed by default. To allow cross-domain requests, $.mobile.allowCrossDomainPages configuration option should be set to true. After the external page is successfully loaded and injected into DOM, a 'pageload' event is triggered. Later on, page transition occurs. Finally, after the page transition animations complete, 'pagechange' event is triggered. In addition to above events, a 'hashchange' event is also triggered because the current location hash is changed.

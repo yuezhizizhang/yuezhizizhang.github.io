@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "JSONP : Cross-Domain Ajax Request"
+categories: javascript
+---
+
+* What's JSONP
+
+JSONP is JSON with padding. It's an artful means to bypass the same origin policy restriction, which is imposed by web browsers. Web browser prohibits scripts running on a domain requesting data from a server in a different domain. However, an exception is the HTML &lt;script&gt; element. Hence, JSONP makes use of it and dynamically injects a script element into HTML DOM. P actually stands for a callback function which is executed at response time.
+
+* JSONP via jQuery
+
+jQuery allows cross-domain Ajax request via JSONP. An example is shown below:
+
+```javascript
+$.ajax({
+    url: url,
+    type: "GET",
+    dataType: "jsonp",
+    crossDomain: true,
+    async: true,
+    cache: true,
+    jsonp: "_callback",
+    success: callback
+});
+```
+
+What is done after launching this request? Firstly, the complete request URL looks like "url?_callback=XXX". The url, of course, is the url specified in the url property. The query parameter "?_callback=XXX", however, is appended by jQuery. Actually, the appendix reveals the nature of JSONP request, JSON with padding. JSONP response looks like below, a function wraps the JSON data:
+
+```html
+<script type="text/javascript">
+    functionName({"name": "value"});
+</script>
+```
+
+However, if the server actually doesn't support JSONP, probably, a JSON is sent back directly. In this case, the browser throws an exception "Uncaught SyntaxError: Unexpected token:", warning that it's invalid JavaScript:
+
+```html
+<script type="text/javascript">
+    {"name": "value"}
+</script>
+```
+
+Talking about the callback function, what does the callback look like in jQuery? Well, it's not what we specify in the success or error property. It's actually dynamically created by jQuery. The callback function is installed on window and its responsibility is simple: extracting the JSON data.
+
+```javascript
+// Install callback
+window[ jsonpCallback ] = function( response ) {
+    responseContainer = [ response ];
+};
+```
+
+As what I have mentioned before, to launch a cross-domain Ajax request, a script element is dynamically injected into HTML DOM. How does jQuery do it? Firstly, jQuery creates a script element, the src property of which links to the complete URL "url?_callback=XXX".
+
+```javascript
+script = document.createElement( "script" );
+......
+script.src = s.url;
+```
+
+And then the script element is injected in to head. At meantime, the script's onload event is listened. After script is entirely loaded, the loaded JavaScript is evaluated and executed, which basically invokes the callback function.
+
+```javascript
+converters: {
+    "text script": function( text ) {
+        jQuery.globalEval( text );
+        return text;
+    }
+}
+```
+
+And we already know that the callback function extracts the JSON data. And then, the JSON data is really passed to the success callback function, which we specify in the success property.
+
+After we know the life cycle of JSONP request via jQuery, let's take a closer look at the ajax parameters. Firstly, dataType is jsonp, indicating it's a cross-domain Ajax request. Then, you either explicitly set crossDomain to true or ignore this property. If you ignore it, jQuery does the work for you. It checks the Ajax request url, if it is in another domain, jQuery set crossDomain to true. However, DO NOT set crossDomain to false. See how jQuery checks request url to determine whether it's a cross-domain request.
+
+```javascript
+if ( s.crossDomain == null ) {
+    parts = rurl.exec( s.url.toLowerCase() );
+    s.crossDomain = !!( parts &&
+        ( parts[ 1 ] !== ajaxLocParts[ 1 ] || parts[ 2 ] !== ajaxLocParts[ 2 ] ||
+            ( parts[ 3 ] || ( parts[ 1 ] === "http:" ? "80" : "443" ) ) !==
+                ( ajaxLocParts[ 3 ] || ( ajaxLocParts[ 1 ] === "http:" ? "80" : "443" ) ) )
+	);
+}
+```
+
+Out of security concerns, jQuery only allows cross-domain GET request. GET request ensures user doesn't post malicious data to the server. Once again, you don't have to explicitly set it because jQuery changes the type to GET on a cross-domain Ajax request.
+
+```javascript
+if ( s.crossDomain ) {
+    s.type = "GET";
+    s.global = false;
+}
+```
+Cross-domain Ajax request must be asynchronous whether async is set true or false. By default, jQuery append a query parameter "?callback=XXX" to the end of the URL to specify the callback. However, you are able to change the parameter name to whatever by specifying jsonp property. In my example, the appendix looks like "?_callback=XXX".
