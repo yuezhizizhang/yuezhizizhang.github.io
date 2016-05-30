@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Page Reload - Achilles' Heel of Ajax"
+categories: javascript
+---
+
+What're the advantages of Ajax? Partial refresh, asynchronous communication, responsive UI, you name it. However, there is one benefit we tend to neglect, that is it makes data sharing across multiple pages so simple.
+
+For a classic web application, the normal way to pass data between pages is via cookies, sessions or URL query string. However, in an Ajax web application, data could be stored in the JavaScript objects and these objects are alive all over the lifecycle of the application. Is it amazing? I mean we are actually developing web applications in a desktop's way. Of course, the key point is that all of the pages are loaded via Ajax and the page refresh is done via JavaScript. In short, the browser is ignorant of page refresh. Let alone page refresh, even the URL address is updated by JavaScript. You doubt it? Then take a look at the source codes of JQuery Mobile. JQuery Mobile applications are absolutely Ajax applications.
+
+The JavaScript is parsed once at load time. And an Ajax web application is loaded once in the beginning, while later on, all the page refreshes or href updates are done by JavaScript. Supposing that the landing page contains all the JavaScripts needed (which is strongly recommended), then after opening the web application, all the JavaScript objects are alive till the end of the application. These objects are able to help you store a large number of data on the client side. In addition, these data are accessible across pages.
+
+As what I have mentioned before, the JavaScript objects are only cleared at the end of the web application. There are multiple ways to end an web application. One is closing the tab or window, while the other is reloading the page. Since page reload happens so frequently, hence, one significant difference between a desktop application and a web application is that it's too easy to end an web application. What makes it worse, after  reloading the page, user typically still wants to stay in the current page. God knows what's the current page, at least the browser doesn't know.
+
+One situation is that the browser assumes the current page is the landing page, because it's totally ignorant of page changes. In this case, reloading the page, from a user's perspective, means going back to the beginning page, which is of course not acceptable. A better situation is that the browser knows which HTML page should be displayed because the URL address is updated accordingly, like in JQuery Mobile. However, it may not have adequate data to display the page correctly, because data are fetched from server during the previous page steps and are stored in the JavaScript objects. Reloading the current page doesn't trigger re-fetching the necessary data. Hence, the current page is not correctly displayed.
+
+To draw a conclusion, we should be very careful to develop an Ajax web application, in which page refreshes are done by JavaScript and data is stored in JavaScript objects. We must realize in advance that page reload could be a big issue. How to preserve the current page info even after reloading? Cookies, Sessions or what? If you don't think about it in the beginning, you could be as miserable as me. Haa......
