@@ -4,15 +4,15 @@ title:  "Tips on Creating and Sending a HTML Email"
 categories: javascript
 ---
 
-* How to send a HTML Email with Embedded images via Outlook?
+* **How to send a HTML Email with Embedded images via Outlook?**
 
 The simplest way I've found is: First, open the HTML with IE browser. Subsequently, Ctrl+A to select the whole page and Ctrl+C to copy it. Finally, create a new mail message and use Ctrl+V to paste the HTML into the mail. In this way, the images are embedded into the mail message.
 
-* What's the usual size of a HTML Email?
+* **What's the usual size of a HTML Email?**
 
 600 to 650 pixels in width.
 
-* How to create a HTML Email?
+* **How to create a HTML Email?**
 
 **Rule 1 - Use Table for Layout**
 
@@ -30,7 +30,7 @@ It proves that Outlook has problems dealing with background image. Hence, try to
 
 Bear in your heart that that it would be a pixel-by-pixel tedious work right when you start designing it. Protect your eyes!
 
-* Professional Guidance
+* **Professional Guidance**
 
 [http://www.sitepoint.com/code-html-email-newsletters/](http://www.sitepoint.com/code-html-email-newsletters/)
 

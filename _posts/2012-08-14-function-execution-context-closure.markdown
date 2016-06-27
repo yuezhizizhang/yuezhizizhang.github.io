@@ -31,7 +31,7 @@ It's a simple piece of codes. func prints out the parameter key after a 3-second
 
 The timeout callback function print magically remembers the respective argument of each call. HOW? Obviously, each timeout callback function is invoked long after both func executions end. And there is only one func object in the global scope. Therefore, intuitively, if the parameter key is a member of func object, both callback functions should print out the same message 'second timeout callback invoked.'. Whereas the fact is the first callback function actually prints out the argument passed in by the first invocation of func, that is 'first'. The conclusion is there must be respective objects storing the information of each execution of a function.
 
-* Execution Context
+* **Execution Context**
 
 My deduction proves right. There is such a thing called Execution Context. Each call of a function generates a new execution context. Every execution context contains three elements: Activation Object, Scope Chain and This value.  Activation Object is where arguments, local variables and local function declarations are stored. Takes the code snippet above as an example, the  Activation Object of each calling of function func looks like below:
 
