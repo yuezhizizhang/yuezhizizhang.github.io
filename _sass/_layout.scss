@@ -168,7 +168,7 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+    padding: 80px 0;
 }
 
 .page-heading {
@@ -191,7 +191,20 @@
 
 .post-link {
     display: block;
-    font-size: 24px;
+    color: #666;
+
+    &:visited {
+        color: #333;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .date {
+        float: right;
+        font-size: 14px;
+    }
 }
 
 

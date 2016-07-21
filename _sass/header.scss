@@ -22,10 +22,10 @@
 }
 
 .banner {
-    height: 60px;
+    height: 50px;
     position: relative;
     overflow: hidden;
-    background-color: #1E90FF; //#094AB2;
+    background-color: #8B0000;
 
     > .center {
         width: 100%;
@@ -33,17 +33,28 @@
         max-width: 1000px;
         margin: 0 auto;
         padding: 0 40px;
+    }
 
-        .banner-name {
-            font-family: 'Cabin Sketch', cursive;
-            font-weight: normal;
-            font-size: 28px;
-            line-height: 60px;
-            color: #fff;
+    .banner-name {
+        font-family: 'Cabin Sketch', cursive;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 50px;
+        color: white;
+    }
+
+    .social-links {
+        color: white;
+        float: right;
+        font-size: 24px;
+        line-height: 50px;
+
+        > a {
+            text-decoration: none;
+            color: white;
         }
     }
 }
-
 
 .blog-header {
     width: 100%;
@@ -55,19 +66,19 @@
 }
 
 .blog-logo {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     position: absolute;
-    top: -60px;
+    top: -50px;
     right: 50%;
     margin-right: -60px;
     background-size: cover;
     border-radius: 50%;
     z-index: 99;
     text-indent: -9999px;
-    border: 3px solid #fff;
-    background-color: #fff;
+    border: 3px solid white;
+    background-color: white;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     background: url('/assets/me.jpg') no-repeat;
-    background-size: 120px 120px;
+    background-size: 100px 100px;
 }
