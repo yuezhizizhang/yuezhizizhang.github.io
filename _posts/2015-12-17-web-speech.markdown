@@ -4,9 +4,9 @@ title:  "Web Speech API"
 categories: javascript
 ---
 
-The Web Speech API consists of two parts: SpeechSynthesis (or TTS) and SpeechRecognition. Chrome browser has the best implementation of both API. Therefore, the code sampels given below are on Chrome. 
+The Web Speech API consists of two parts: SpeechSynthesis (or TTS) and SpeechRecognition. Chrome browser has the best implementation of both API. Therefore, the code sampels given below are on Chrome.
 
-* **Speech Synthesis**
+### Speech Synthesis
 
 SpeechSynthesis or TTS is text to speech, namely, the web browser speaks out a text message. Currently, Chrome is able to speak in a variety of languages. By specifying the voice property, we are able to name the language. A smart way is to let the browser to decide which language to speak in by itself. Browser is able to do the speculation according to the language settings.
 
@@ -61,7 +61,7 @@ function speak(text, callback, selectedVoice) {
     msg.onend = onend;
 
     window.speechSynthesis.speak(msg);
-    
+
     window.setTimeout(function(){
         if (!ended) {
             onend();
@@ -72,7 +72,7 @@ function speak(text, callback, selectedVoice) {
 
 The onend event is quite unstable. From times to times, it's not triggered. Hence, I've added a timeout timer to guarantee that the ending callback handler is invoked.
 
-* **Speech Recognition**
+### Speech Recognition
 
 SpeechRecognition takes settings like lang, which sets the language to recognize; continuous, whether single or continuous results are returned; and interimResults, whether intermediate results are returned.
 

@@ -6,7 +6,7 @@ categories: jquery, jquery mobile
 
 How to enable and disable various components in jQuery Mobile? Following are my tips.
 
-*** Button**
+### Button
 
 To disable a button, simply add the 'disabled' attribute to it:
 
@@ -47,7 +47,7 @@ $('#anchor').addClass('ui-disabled');     // Disable anchor button
 $('#anchor').removeClass('ui-disabled');  // Enable anchor button
 ```
 
-*** Form**
+### Form
 
 It's extremely easy to disable form components by just adding 'disabled' attribute to them.
 

@@ -4,11 +4,11 @@ title:  "JSONP : Cross-Domain Ajax Request"
 categories: javascript
 ---
 
-* **What's JSONP**
+### What's JSONP
 
 JSONP is JSON with padding. It's an artful means to bypass the same origin policy restriction, which is imposed by web browsers. Web browser prohibits scripts running on a domain requesting data from a server in a different domain. However, an exception is the HTML &lt;script&gt; element. Hence, JSONP makes use of it and dynamically injects a script element into HTML DOM. P actually stands for a callback function which is executed at response time.
 
-* **JSONP via jQuery**
+### JSONP via jQuery
 
 jQuery allows cross-domain Ajax request via JSONP. An example is shown below:
 

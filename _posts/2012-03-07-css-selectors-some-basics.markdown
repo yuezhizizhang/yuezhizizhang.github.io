@@ -6,7 +6,7 @@ categories: css
 
 CSS Selectors are nice, fancy, awesome... blablabla....Yep, I know that feeling. But you know there is no perfect world; hence, power usually comes along with cost. That's why we have to dig into the basics of CSS selectors to ensure that we don't misuse it at the expense of the rendering performance of browsers.
 
-**1. Right to Left**
+### Right to Left
 
 Browsers parse CSS selectors from right to left. For example, for CSS selector .footer h3 {...}, the browser starts from the rightmost tag selector h3, finding out all the h3 elements. And then the browser traverses up the DOM tree, evaluating every ancestor element to see if it's of class footer until it reaches the root element. Bearing the rule 'Right to Left' in mind, it's easy for us to understand why following selectors are inefficient:
 
@@ -16,13 +16,13 @@ form#submit {...} /* Overly qualified selectors -
 					information that needs to be evaluated. */
 
 body ul li a {...} /* Descendant selectors are inefficient.
-					body selector is redundant because all elements are 
+					body selector is redundant because all elements are
 					descendants of body. */
 
 .number * {...} /* Universal selector is the least efficient one. */
 ```
 
-**2. Cascading Order**
+### Cascading Order
 
 Cascading Style Sheets. What's the actual meaning of cascading? The so-called cascade refers to the priority or weight scheme to determine which style rules apply if more than one rule matches against a particular element. The rules concerning the CSS selectors are chosen in the following order:
 
@@ -57,7 +57,7 @@ div {
 
 ![Cascading Selector](/assets/2012-03-07-css-selector-1.png "id selector")
 
-The specificity is calculated by counting the respective occurs of ID attributes, class attributes and tag attributes in the selector. And then write the three numbers in exact order with no spaces or commas to obtain a three digit number. The selector of larger number is applied. See, #main wins in the compete. 
+The specificity is calculated by counting the respective occurs of ID attributes, class attributes and tag attributes in the selector. And then write the three numbers in exact order with no spaces or commas to obtain a three digit number. The selector of larger number is applied. See, #main wins in the compete.
 
 ```
 div  /* a = 0, b = 0, c = 1 --> specificity = 001 */

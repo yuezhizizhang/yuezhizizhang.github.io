@@ -5,7 +5,7 @@ categories: linux
 ---
 
 <table border="1" cellspacing="0" cellpadding="5">
-	<tr bgcolor="7FFFD4">
+	<tr bgcolor="AFEEEE">
 		<th width="200">Command</th>
 		<th>Description</th>
 	</tr>

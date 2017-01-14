@@ -6,7 +6,7 @@ categories: jquery, jquery-mobile
 
 I have been intensively working with jQuery Mobile during recent days. Following are some of the tips I grasp via using this library.
 
-*** Methods**
+### Methods
 
 **1. $.mobile.changePage**
 
@@ -42,7 +42,7 @@ URL path helper provide many useful utility methods. One of them is parseUrl fun
 
 Additionally, path object also provides functions to get (get()) and set (set(path)) location hash, to check whether a URL is relative (isRelativeUrl(url)) or absolute (isAbsoluteUrl(url)).
 
-*** Refresh**
+### Refresh
 
 Refresh is highly important especially when the page is partially updated. For example, if we update a select via Javascript, we have to call the refresh method on it to update the visual styling.
 
