@@ -12,7 +12,7 @@ Useful tutorials are scarce online. I've found only two materials which help, on
 
 ### Getting Started
 
-* **Boilerplate App**
+* **Hello, World**
 
 A basic Shoes app looks like below:
 
@@ -24,7 +24,7 @@ class MyApp < Shoes
     stack width: '100%',
           margin_top: 50 do
 
-      title 'Hello World!',
+      title 'Hello, World!',
             font: '"Helvetica Neue", Helvetica, Arial, sans-serif 24',
             align: 'center'
     end
