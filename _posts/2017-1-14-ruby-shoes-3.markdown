@@ -258,3 +258,6 @@ end
 
 To build up a table, a simple rule is to use flow for a row.
 
+### Conclusion
+
+To me, Shoes 3 is not a proper GUI for enterprise apps. It's OK to use it building some toy apps. But that's it, toy apps only.
