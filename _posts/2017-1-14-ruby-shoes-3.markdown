@@ -258,6 +258,30 @@ end
 
 To build up a table, a simple rule is to use flow for a row.
 
+* **Package**
+
+Please refer to wiki [Command line packager](https://github.com/Shoes3/shoes3/wiki/Command-line-packager) on how to package Shoes app to exe by code. A simple example is:
+
+```
+require 'shoes/packshoes'
+
+opts = {}
+opts['app'] = './my-app.shy'
+opts['advopts'] =  false
+opts['expandshy'] = true
+opts['installer-icon'] = './icon.png'
+opts['gempack'] = './gems.tar'              # It doesn't work
+opts['arch'] = 'x86_64'                     # win32 armhf x86_64 i686 or osx
+opts['dnlhost'] = 'walkabout.mvmanila.com'  # no http://
+opts['dnlpath'] = "/public/select/#{opts['arch']}.rb"
+opts['shoesdist'] = "./shoes-3.3.1-gtk3-32.exe"
+opts['packtmp'] = 'C:/Temp'
+opts['relname'] = 'my-app'
+PackShoes.repack_exe opts
+```
+
+Here, I have to highlight two points. First, **opts['advopts']** must be **false** if you want Shoes to use the shy file you have specified. Otherwise, Shoes will create another shy file, which is most likely not working. Second, gems can't be packed into Shoes exe. You must find other means to install the dependent Gems into Shoes library. It is really absurd.
+
 ### Conclusion
 
 To me, Shoes 3 is not a proper GUI for enterprise apps. It's OK to use it building some toy apps. But that's it, toy apps only.
