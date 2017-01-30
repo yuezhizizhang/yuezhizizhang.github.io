@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Chinese Colors"
+title:  "Chinese Traditional Colors"
 categories: color
 ---
 
