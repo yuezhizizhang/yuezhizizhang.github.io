@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ruby Shoes! 3"
-categories: cache
+categories: ruby, shoes
 ---
 
 After the New Year, I've been working with Ruby Shoes! GUI for roughly 2 weeks. This GUI sucks. Thank God, the work has come to an end. Here, I'd like to share whatever I've learned with you.
