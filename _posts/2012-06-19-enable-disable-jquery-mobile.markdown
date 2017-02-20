@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Enable vs Disable - jQuery Mobile"
-categories: jquery, jquery mobile
+categories: "jquery jquery-mobile"
 ---
 
 How to enable and disable various components in jQuery Mobile? Following are my tips.

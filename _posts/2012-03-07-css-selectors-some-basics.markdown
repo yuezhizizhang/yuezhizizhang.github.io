@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CSS Selectors (Some Basics)"
-categories: css
+categories: "css"
 ---
 
 CSS Selectors are nice, fancy, awesome... blablabla....Yep, I know that feeling. But you know there is no perfect world; hence, power usually comes along with cost. That's why we have to dig into the basics of CSS selectors to ensure that we don't misuse it at the expense of the rendering performance of browsers.

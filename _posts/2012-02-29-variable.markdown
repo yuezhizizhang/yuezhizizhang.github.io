@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Variable"
-categories: javascript
+categories: "javascript"
 ---
 
 Variables are declared using the keyword "var". For instance, the following statement creates a variable named "message":

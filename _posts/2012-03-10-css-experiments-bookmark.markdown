@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CSS Experiments @ Bookmark"
-categories: css
+categories: "css"
 ---
 
 It is sort of a "Hello World" program. But why a bookmark? It's simply because all the materials I have at hand, a photo shot last autumn in Beijing and a poem for one of my best friends whom I have lost contact with, are appropriate to make a bookmark.
@@ -77,11 +77,11 @@ p {
 }
 ```
 
-However, we notice that there are some unwanted borders, such as the white border on the very top and the border below the empty line. 
+However, we notice that there are some unwanted borders, such as the white border on the very top and the border below the empty line.
 
 ![Cascading Selector](/assets/2012-03-10-css-exp-4.png "css experiment")
 
-To remove these unwanted borders, I resort to the pseudo selector nth-child. I remove the top border on the first line, sixth line, eleventh line...; likewise I remove the bottom border on the fifth line, tenth line, fifteenth line... 
+To remove these unwanted borders, I resort to the pseudo selector nth-child. I remove the top border on the first line, sixth line, eleventh line...; likewise I remove the bottom border on the fifth line, tenth line, fifteenth line...
 
 ```css
 p:nth-child(5n+1) {
@@ -94,7 +94,7 @@ p:nth-child(5n+5) {
 ```
 
 ### Shadows
-Casting some drop shadows off the boxes make them look 3D. 
+Casting some drop shadows off the boxes make them look 3D.
 
 ```css
 .image {
@@ -109,7 +109,7 @@ Casting some drop shadows off the boxes make them look 3D.
 }
 ```
 
-0px means the horizontal offset is zero. If this number is positive, the shadow is to the right of the box, while a negative number is to the left of the box. 1px is the vertical offset, which means the shadow is at the bottom of the box. 2px is the blur radius. The higher this number, the more blurred the shadow is.    #D1D1D1 is the color of the shadow. 
+0px means the horizontal offset is zero. If this number is positive, the shadow is to the right of the box, while a negative number is to the left of the box. 1px is the vertical offset, which means the shadow is at the bottom of the box. 2px is the blur radius. The higher this number, the more blurred the shadow is.    #D1D1D1 is the color of the shadow.
 
 In a similar way, we are able to drop the text shadow.
 
@@ -125,7 +125,7 @@ In a similar way, we are able to drop the text shadow.
 ```
 
 ### Gradient Background
-Gradient background is still an experimental feature. Therefore, we have to add prefixes to accommodate various browsers. Here I add a top-to-bottom linear gradient to the footer, beginning at color #658F88 and ending at color #31796C. 
+Gradient background is still an experimental feature. Therefore, we have to add prefixes to accommodate various browsers. Here I add a top-to-bottom linear gradient to the footer, beginning at color #658F88 and ending at color #31796C.
 
 ```css
 .footer {

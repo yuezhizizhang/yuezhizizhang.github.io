@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Flickr Album"
-categories: javascript
+categories: "javascript"
 ---
 
 Thanks flickr for hosting my photos and providing me such convenient web services to access them!

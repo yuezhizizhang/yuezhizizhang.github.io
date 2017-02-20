@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  "CSS Sprites"
-categories: css
+categories: "css"
 ---
 
 While I was working on the navigation bar, I came across this AaHa... trick. In the beginning, I thought it was crazy that icons and small images are combined into a large picture. A minute later, I realized that there must be some reason because so many websites have applied this technique.
 
 ![Cascading Selector](/assets/2012-03-13-css-sprites-2.png "css sprites")
 
-Not surprisingly, it turns out to be a must-to-know CSS technique called CSS Sprites. The basic idea is by combining multiple images into one, it's able to reduce the number of HTTP requests. One HTTP request is able to fetch all of the icons and small images required to display the web page. And performance research has indicated that "reducing the number of HTTP requests has the biggest impact on reducing response time and is often the easiest performance improvement to make". 
+Not surprisingly, it turns out to be a must-to-know CSS technique called CSS Sprites. The basic idea is by combining multiple images into one, it's able to reduce the number of HTTP requests. One HTTP request is able to fetch all of the icons and small images required to display the web page. And performance research has indicated that "reducing the number of HTTP requests has the biggest impact on reducing response time and is often the easiest performance improvement to make".
 
 How to implement sprites with CSS? Generally speaking, firstly, we have to merge the icons into one big sprite image via Photoshop or any other kind of image processing tool. Next, we set the sprite image as the background image. Finally, we could display any part of the image via shifting the background position.
 
@@ -35,7 +35,7 @@ The content consisting the navigation bar is an unordered list:
 </ul>
 ```
 
-To align the unordered list horizontally, the tip is to set the list element's display as inline-block. Basically speaking, inline-block is a way to make elements inline, yet preserving their block capabilities such as setting width and height, top and bottom margins and paddings etc. Thus, list elements are displayed horizontally. 
+To align the unordered list horizontally, the tip is to set the list element's display as inline-block. Basically speaking, inline-block is a way to make elements inline, yet preserving their block capabilities such as setting width and height, top and bottom margins and paddings etc. Thus, list elements are displayed horizontally.
 
 ```css
 li {
@@ -43,7 +43,7 @@ li {
 }
 ```
 
-However, since the list elements are treated as inline elements, there is always some space between two list elements even if the margin of li is set to zero. To remove these annoying gaps, one method is to set the margin to a negative value, say -2px. 
+However, since the list elements are treated as inline elements, there is always some space between two list elements even if the margin of li is set to zero. To remove these annoying gaps, one method is to set the margin to a negative value, say -2px.
 
 ![Cascading Selector](/assets/2012-03-13-css-sprites-3.png "css sprites")
 
@@ -58,7 +58,7 @@ Next, I set the sprite image as the background image of the anchor element itsel
 }
 ```
 
-Each anchor element displays only a part of the whole background. For example, the second anchor element displays the iPhone icon. To do that, merely shift the background position with negative X coordinates -64px. The shift is calculated in this way: originally, the background image is positioned with its (0, 0) aligned to the top-left of the container. Since the iPhone icon starts at (64px, 0) on the image, we have to shift the image leftward of 64px to align the start of iPhone icon to the top-left of the container. Therefore, the background is shifted with X coordinates -64px. 
+Each anchor element displays only a part of the whole background. For example, the second anchor element displays the iPhone icon. To do that, merely shift the background position with negative X coordinates -64px. The shift is calculated in this way: originally, the background image is positioned with its (0, 0) aligned to the top-left of the container. Since the iPhone icon starts at (64px, 0) on the image, we have to shift the image leftward of 64px to align the start of iPhone icon to the top-left of the container. Therefore, the background is shifted with X coordinates -64px.
 
 ```css
 .iphone {

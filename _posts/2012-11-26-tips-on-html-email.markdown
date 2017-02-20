@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Tips on Creating and Sending a HTML Email"
-categories: javascript
+categories: "javascript"
 ---
 
 * **How to send a HTML Email with Embedded images via Outlook?**

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Function, Execution Context and Closure"
-categories: javascript
+categories: "javascript"
 ---
 
 I used to assume that I knew closure. Not until I read this great article http://dmitrysoshnikov.com/ecmascript/javascript-the-core/, I realized I was totally wrong.

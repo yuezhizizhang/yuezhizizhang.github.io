@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Tips of jQuery Mobile"
-categories: jquery, jquery-mobile
+categories: "jquery jquery-mobile"
 ---
 
 I have been intensively working with jQuery Mobile during recent days. Following are some of the tips I grasp via using this library.

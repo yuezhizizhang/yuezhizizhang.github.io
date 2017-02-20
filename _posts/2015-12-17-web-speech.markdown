@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Web Speech API"
-categories: javascript
+categories: "javascript"
 ---
 
 The Web Speech API consists of two parts: SpeechSynthesis (or TTS) and SpeechRecognition. Chrome browser has the best implementation of both API. Therefore, the code sampels given below are on Chrome.

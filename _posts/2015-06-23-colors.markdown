@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Colors"
-categories: css
+categories: "css"
 ---
 
 

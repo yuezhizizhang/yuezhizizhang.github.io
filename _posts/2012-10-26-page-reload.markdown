@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Page Reload - Achilles' Heel of Ajax"
-categories: javascript
+categories: "javascript"
 ---
 
 What're the advantages of Ajax? Partial refresh, asynchronous communication, responsive UI, you name it. However, there is one benefit we tend to neglect, that is it makes data sharing across multiple pages so simple.

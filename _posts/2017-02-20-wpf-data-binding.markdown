@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "XAML Data Binding"
-categories: wpf xaml c#
+categories: "wpf xaml c#"
 ---
 
 I'm late to WPF development. I have learned a few tips from my recent experience with a WPF project. Most of my knowledge of WPF, XAML and C# are from Googling. Here, I simply want to summarize some of the tricks I've learned, for furture reference and etc.

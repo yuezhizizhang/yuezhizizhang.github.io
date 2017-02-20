@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Git - All the commands you need to work on Git"
-categories: git
+categories: "git"
 ---
 
 Git has become the most widely used version control system in the world. Following are the premier commands one needs to master to work on Git.
@@ -65,7 +65,7 @@ git add .
 git commit
 ```
 
-The <i>git commit</i> command commits the staged changes to the project histroy. 
+The <i>git commit</i> command commits the staged changes to the project histroy.
 
 * **Inspect**
 
@@ -87,7 +87,7 @@ The <i>git log</i> command displays the committed history.
 git rebase -i HEAD~i
 ```
 
-The <i>git rebase</i> with -i flag begins an interactive rebasing session. It opens an editor where you can enter commands for each commit, whether to merge it into other commits or rewrite its commit message. 
+The <i>git rebase</i> with -i flag begins an interactive rebasing session. It opens an editor where you can enter commands for each commit, whether to merge it into other commits or rewrite its commit message.
 
 * **Push to remote**
 

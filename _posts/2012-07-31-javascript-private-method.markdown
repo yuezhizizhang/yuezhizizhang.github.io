@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JavaScript Private Methods"
-categories: javascript
+categories: "javascript"
 ---
 
 People share some consensus on what's the best way in defining a public method for a JavaScript Class, that is:
@@ -10,13 +10,13 @@ People share some consensus on what's the best way in defining a public method f
 classname.prototype.methodname = function() {...}
 ```
 
-The biggest advantage of defining methods via prototype rather than straight inside the constructor is that a single function object is shared among all the class instances. 
+The biggest advantage of defining methods via prototype rather than straight inside the constructor is that a single function object is shared among all the class instances.
 
 By contrast, there is no such rule of thumb on how to define private methods. A simple and probably most prevalent way is declaring the private functions using var inside constructor, for example:
 
 ```javascript
 function TestClass() {
-	
+
     var privateMethod = function() {
         alert('A private method is invoked');
     };
@@ -28,7 +28,7 @@ function TestClass() {
 }
 ```
 
-However, a major drawback of this solution is that the public methods which make use of the private methods must be defined in the same scope as that of private methods. That is these public methods have to be defined inside constructor too. As a result, each class instance has a respective copy of these function objects. 
+However, a major drawback of this solution is that the public methods which make use of the private methods must be defined in the same scope as that of private methods. That is these public methods have to be defined inside constructor too. As a result, each class instance has a respective copy of these function objects.
 
 How to avoid the redundancy? Self-executing anonymous function comes to help.
 

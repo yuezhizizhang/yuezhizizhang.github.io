@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Be Careful with Prototype Property"
-categories: javascript
+categories: "javascript"
 ---
 
 Today, I have spent nearly half a day wrestling with a bug. Eventually, it turned out that the root cause is the misuse of prototype property. Prototype property is like a pitfall for someone like me who comes from the object-oriented world. In Java, for instance, it's quite normal to define a common property in the base class, so that all the derived classes contain this property. Hence, it's no surprise I wrote down some silly codes like below:

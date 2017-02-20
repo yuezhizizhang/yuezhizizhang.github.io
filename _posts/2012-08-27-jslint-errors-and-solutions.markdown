@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JSLint: Errors and Solutions"
-categories: javascript
+categories: "javascript"
 ---
 
 JSLint is cool! It helps us identify a number of hidden bugs in our codes. However, JSLint only represents a type of coding style, which you may not totally agree with. For example, JSLint doesn't expect a function name to start with uppercase; it prefers dot notation to subscript notation. In summary, there are times you would like to suppress JSLint warnings. Following is a guidance of JSLint warnings and possible solutions.
@@ -19,7 +19,7 @@ The JavaScript file is dependent on global variables defined elsewhere. For inst
 **[E] 'window' was used before it was defined.**<br/>
 **[S] /*jslint browser: true */**
 
-To use the global properties provided by web browser, such as window and document, add the browser directive. 
+To use the global properties provided by web browser, such as window and document, add the browser directive.
 
 **[E] A constructor name 'XXX' should start with an uppercase letter.**<br/>
     **Missing 'new'.**<br/>
@@ -35,7 +35,7 @@ JSLint prefers dot notation to subscript notation, i.e. user.name is better than
 **[E] Expected exactly one space between 'function' and '('.**<br/>
 **[S] /*jslint white: true */**<br/>
 
-As far as anonymous function is concerned, JSLint prefers one space between keyword function and the parameter bracket. To mute this warning, add the white directive. 
+As far as anonymous function is concerned, JSLint prefers one space between keyword function and the parameter bracket. To mute this warning, add the white directive.
 
 **[E] Move the invocation into the parens that contain the function.**<br/>
 **[S] }());**<br/>

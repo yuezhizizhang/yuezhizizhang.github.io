@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What's the use of Array.prototype.slice.call(arguments)?"
-categories: javascript
+categories: "javascript"
 ---
 
 ```javascript
@@ -9,7 +9,7 @@ function makeArray() {
     return Array.prototype.slice.call(arguments);
 }
 ```
-makeArray() returns an actual array, which is a copy of arguments. Arguments isn't an real array, even though it has a length property and could be accessed through array indexes. 
+makeArray() returns an actual array, which is a copy of arguments. Arguments isn't an real array, even though it has a length property and could be accessed through array indexes.
 
 To verify that Arguments isn't Array, simply take a look at of Arguments object.  In its prototype chain, there is no Array; hence, it doesn't own slice method.
 

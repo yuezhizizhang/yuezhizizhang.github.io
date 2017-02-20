@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Minify JavaScript with UglifyJS"
-categories: javascript
+categories: "javascript"
 ---
 
 UglifyJS is a JavaScript minifying tool, which runs on NodeJS. Compared with other popular JavaScript minifiers, such as YUI Compressor and Google Closure, a remarkable advantage of using UglifyJS is that it's available as a native command. To utilize UglifyJS, we need to install NodeJS first and then the UglifyJS module.

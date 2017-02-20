@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ctrl+Shift+R for Chrome"
-categories: cache
+categories: "cache"
 ---
 
 Chrome caches like a mad dog. It is really annoying for a web developer.

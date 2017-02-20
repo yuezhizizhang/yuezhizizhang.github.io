@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JavaScript Class with Private Members"
-categories: javascript
+categories: "javascript"
 ---
 
 Is there such a perfect way to define a JavaScript class? By perfect, I mean namespace, private members, public members, prototype chain are all in one. I couldn't figure out a way in which I have private members while the functions are defined in the prototype chain.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Table, Overlay and Event"
-categories: javascript
+categories: "javascript"
 ---
 
 Think big, Act small! Yep, It's typical me. I was conceiving of some fancy app like Google Doc, whereas I ended up with a tiny piece like the following.

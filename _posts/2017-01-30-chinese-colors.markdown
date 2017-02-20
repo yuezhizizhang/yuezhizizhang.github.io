@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Chinese Traditional Colors"
-categories: color
+categories: "color"
 ---
 
 <table border="0" cellpadding="5" cellspacing="0">
