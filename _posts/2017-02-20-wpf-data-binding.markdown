@@ -28,33 +28,36 @@ What's missing here is to send a property change event.
 ```c#
 C#
 
-public event PropertyChangedEventHandler PropertyChanged;
-
-private void NotifyPropertyChanged(string propertyName)
+public partial class HomePage : UserControl, INotifyPropertyChanged
 {
-    if (this.PropertyChanged != null &&
-        !string.IsNullOrEmpty(propertyName))
-    {
-        this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-    }
-}
+    public event PropertyChangedEventHandler PropertyChanged;
 
-private string username;
-public string Username
-{
-    get { return username;}
-    set
+    private void NotifyPropertyChanged(string propertyName)
     {
-        if (username != value)
+        if (this.PropertyChanged != null &&
+           !string.IsNullOrEmpty(propertyName))
         {
-            username = value;
-            NotifyPropertyChanged("Username");
+           this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    private string username;
+    public string Username
+    {
+        get { return username;}
+        set
+        {
+            if (username != value)
+            {
+                username = value;
+                NotifyPropertyChanged("Username");
+            }
         }
     }
 }
 ```
 
-Only by sending a property changed event, you are able to notify the UI to update accordingly.
+Only by sending a property changed event, you are able to notify the UI to update accordingly. What's needed to mention here is, the class must implement **INotifyPropertyChanged** interface.
 
 Here is a blog which talks more detalis and some improvements of notifying property change:
 
