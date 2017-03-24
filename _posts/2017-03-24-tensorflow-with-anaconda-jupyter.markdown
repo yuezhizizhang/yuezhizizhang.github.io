@@ -40,4 +40,4 @@ C:\WINDOWS\system32>activate tensorflow
 (tensorflow) C:\WINDOWS\system32>jupyter notebook
 ```
 
-Done. It has paved the way for your adventure with Tensorflow and Machine Learning.
+Done. It paves the way for your adventure with Tensorflow and Machine Learning.
