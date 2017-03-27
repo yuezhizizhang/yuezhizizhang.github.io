@@ -6,6 +6,8 @@ categories: "Tensorflow Anaconda Jupyter"
 
 Machine learning is really an enchanting subject. I'm starting with it, aiming at training out a stock market predictor, LOL.
 
+### Tutorials
+
 About Machine Learning, the best tutorials I have found out so far is the Standford open class:
 
 * [Stanford Open Class Machine Learning](http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning)
@@ -17,6 +19,8 @@ To getting start with Tensorflow, you can read these two tutorials:
 * [Gentlest Introduction to Tensorflow](https://medium.com/all-of-us-are-belong-to-machines/the-gentlest-introduction-to-tensorflow-248dc871a224)
 
 * [Learning Tensorflow](http://learningtensorflow.com/index.html)
+
+### Setup Environment
 
 To install Tensorflow with Anaconda on Windows, you have to follow the [Steps on Tensorflow website](https://www.tensorflow.org/install/install_windows#installing_with_anaconda). To run the tensorflow environment, use command:
 
@@ -52,6 +56,8 @@ For the tensorflow environment, the correct python path should be like this:
 Available kernels:
   python3    C:\Users\fiona\AppData\Local\conda\conda\envs\tensorflow\lib\site-packages\ipykernel\resources
 ```
+
+### Trouble Shooting
 
 If you launch Jupyter Notebook from path **C:\\**
 
