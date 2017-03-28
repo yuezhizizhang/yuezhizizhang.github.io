@@ -59,7 +59,19 @@ Available kernels:
 
 ### Trouble Shooting
 
-If you launch Jupyter Notebook from path **C:\\**
+* #### Python 3.6
+
+If you have installed Python 3.6 in your conda environment, it's a pity that currently tensorflow doesn't support 3.6 yet. Here is the feature discussion thread: [Python 3.6 support \[feature requests\]](https://github.com/tensorflow/tensorflow/issues/6533). A simpler solution for you is to revert back to Python 3.5. To do it, use command:
+
+```cmd
+(tensorflow) C:\Users\fiona>conda install python=3.5.3
+```
+
+Thus, the Python is reverted back to 3.5 and you are able to install Tensorflow in it.
+
+* #### Jupyter 404
+
+Another thing is if you launch Jupyter Notebook from path **C:\\**
 
 ```cmd
 (tensorflow) C:\>jupyter notebook
