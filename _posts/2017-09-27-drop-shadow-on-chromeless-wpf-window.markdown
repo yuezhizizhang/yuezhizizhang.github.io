@@ -31,7 +31,7 @@ If you dig into the problem, you will find WPF app has some rendering performanc
 * [Optimize WPF App For Remote Desktop](https://blogs.msdn.microsoft.com/jgoldb/2010/02/27/optimizing-visual-studio-2010-and-wpf-applications-for-remote-desktop/)
 * [DropShadowEffect Performance Issue](https://social.msdn.microsoft.com/Forums/vstudio/en-US/7d21c0a0-b638-46a3-9f5e-08dfd97228d3/dropshadoweffect-performance-issue?forum=wpf)
 
-Gosh, the DropShadowEffect makes the window on running a remote desktop not scrollable. Hence, it's best not to add a DropShadowEffect. But I really want the popup window to be titlebar-less and un-resizable. What should I do? Haha, The following codes will solve the problem.
+Gosh, the DropShadowEffect makes the window running on a remote desktop not scrollable. Hence, it's best not to add a DropShadowEffect. But I really want the popup window to be titlebar-less and un-resizable. What should I do? Haha, The following codes will solve the problem.
 
 ```xaml
 <Window ...
