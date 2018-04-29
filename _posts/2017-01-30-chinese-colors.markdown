@@ -4,7 +4,7 @@ title:  "Chinese Traditional Colors"
 categories: "color"
 ---
 
-<table border="0" cellpadding="5" cellspacing="0">
+<!--<table border="0" cellpadding="5" cellspacing="0">
   <tr>
     <td bgcolor="#E62E18" style="color: white;">E62E18</td>
     <td bgcolor="#E62E18" style="color: white;">大红</td>
@@ -64,4 +64,4 @@ categories: "color"
     <td bgcolor="#262628" style="color: white;">鬆烟墨</td>
     <td></td>
   </tr>
-</table>
+</table>-->

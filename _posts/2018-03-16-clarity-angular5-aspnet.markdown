@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Clarity + Angular 5 with ASP.NET"
+title:  "Clarity + Angular 5 with ASP.NET Core"
 categories: "angular5 clarity asp.net vs2017"
 ---
 
