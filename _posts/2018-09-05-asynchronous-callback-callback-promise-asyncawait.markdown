@@ -72,6 +72,9 @@ for ( let i = 0; i < max; i++ ) {
 This section is a tribute to all of these awesome documents I've read through the years. The first two <Learning JavaScript Design Patterns> and <Dive into HTML5> are in particular. They are like bibles. Every web developer must read them.
 
 [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+
 [Dive into HTML5](http://diveinto.html5doctor.com/)
+
 [ECMAScript 6](http://es6-features.org)
+
 [HTML5 Boilerplate](https://html5boilerplate.com/)
