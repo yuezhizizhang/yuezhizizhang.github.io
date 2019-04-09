@@ -26,7 +26,7 @@ const context = require.context('./', true, /\/app\/.*\.ts$/);
 
 Instead, specify your spec file in the context:
 ```typescript
-const context = require.context('./', true, /\/app\/user\/user\.compoent\.spec\.ts$/);
+const context = require.context('./', true, /\/app\/user\/user\.component\.spec\.ts$/);
 ```
 
 ### No3. How to test ngOnInit?
@@ -80,7 +80,6 @@ The other way around is () via event notification. It's a bit tricky about the i
 const filterSpy: any = spyOn(component, 'filter');
 const searchInput: DebugElement = fixture.debugElement.query(By.css('#search-input'));
 searchInput.nativeElement.dispatchEvent(new Event('ngModelChange'));
-fixture.detectChanges();
 expect(filterSpy).toHaveBeenCalled();
 ```
 
@@ -106,7 +105,59 @@ it('Stub the asynchronous method and validates the response', fakeAsync(() => {
 
 **fakeAsync** and **flush** are doing the tricks here.
 
-### No8. How to make the unit test codes DRY?
+### No8. How to mock ngx-translate TranslateService?
+
+[ngx-translate](https://github.com/ngx-translate/core) is an internationalization (i18n) library. I don't use Angular i18n, because the production build of it only supports AOT compilation. AOT compilation means the locale resources are compiled into JavaScript. Hence, you can't change the locale JSON file on the fly. 
+
+By using ngx-translate, to translate strings in the typescript file, you have to inject TranslateService into the component. Then you can use the **instant** method in the typescript to get the translated string. To mock TranslateService in the component.spec.ts.
+
+In the component.spec.ts:
+```typescript
+{ provide: TranslateService, useClass: TranslateServiceMock }
+```
+
+translate.mock.service.ts:
+```typescript
+export class TranslateServiceMock {
+  instant(key: string, interpolateParams?: Object): string {
+    return key;
+  }
+}
+```
+
+### No9. How to mock ngx-translate pipe?
+
+If you are using ngx-translate pipes, for instance:
+
+```html
+<button id="close-btn"
+        i18n-title="@@close"
+        title="Close"
+        [title]="'close' | translate">
+</button>
+```
+
+Then in the component.spec.ts, you have to mock the translate pipe:
+
+```typescript
+@Pipe({ name: 'translate' })
+class TranslatePipeMock implements PipeTransform {
+    transform(value: string): string {
+        return value;
+    }
+}
+```
+
+And declares it while setting up the testing module:
+
+```typescript
+declarations: [
+  ...
+  TranslatePipeMock
+],  
+```
+
+### No10. How to make the unit test codes DRY?
 
 The simplest way is making the repeated codes into functions. For instance, getDebugElement could be a function. StubGetUsers could be another function.
 
