@@ -8,7 +8,7 @@ Recently, my project is approaching 2.0 release. I met an urgent bug related to 
 
 To clarify the task a little bit, my project is an **ASP.NET Core + Angular 6** web application. However, the web server is installed locally on the machine. Hence to visit the web service, user has to visit https://localhost:XXXX. 
 
-The bug occurs while upgrading from 1.0 to 2.0. And It happens on **Chrome** only. Chrome browser always displays the old web pages. Only if you manully reload the page, will the latest web pages be shown.
+The bug occurs while upgrading from 1.0 to 2.0. And It happens on **Chrome** only. Chrome browser always displays the old web pages. Only if you manually reload the page, will the latest web pages be shown.
 
 By inspecting the Network, I found Chrome always load cache from disk, without asking the web server to see if anything has changed.
 
