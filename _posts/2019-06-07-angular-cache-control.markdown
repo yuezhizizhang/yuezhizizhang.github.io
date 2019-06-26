@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cache-Control is crucial for a single-page web application like Angular"
-categories: "Angular 6, Cache-Control"
+categories: "Angular6 Cache-Control"
 ---
 
 Recently, my project is approaching 2.0 release. I met an urgent bug related to browser cache. 

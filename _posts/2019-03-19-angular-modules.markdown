@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Angular NgModule"
-categories: "Angular 6"
+categories: "Angular6 NgModule"
 ---
 
 Every Angular application bootstraps with a NgModule. It justifies how important module means for an Angular app.

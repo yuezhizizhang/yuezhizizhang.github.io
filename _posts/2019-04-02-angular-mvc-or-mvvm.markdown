@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Is Angular MVC or MVVM"
-categories: "Angular 6, MVC, MVVM"
+categories: "Angular6 MVC MVVM"
 ---
 
 Is Angular MVC or MVVM? Well, it's worth looking at what's MVC and what's MVVM.

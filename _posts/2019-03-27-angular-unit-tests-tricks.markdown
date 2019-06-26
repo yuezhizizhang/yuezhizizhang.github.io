@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Angular Unit Testing Tricks"
-categories: "Angular 6, Unit Testing"
+categories: "Angular6 Unit-Testing"
 ---
 
 A summarization of the unit testing works has been on my mind for some time. After writing almost 400 unit test cases, covering 2700+ lines of codes, I feel I have more confidence to say about it. I wouldn't go to the basics, explainning what's Karma, what's Jasmine. Instead, I will simply list the tricks I use everyday to deal with different testing cases.

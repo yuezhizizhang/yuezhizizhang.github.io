@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Angular Content Projection and ng-template"
-categories: "Angular 6"
+categories: "Angular6"
 ---
 
 To start with, I highly recommend a UX library to you, which is [Clarity Design System](https://github.com/vmware/clarity). It contains almost all of the UX pieces you would need to hook up a website. Indeed an awesome project!
