@@ -12,7 +12,7 @@ Back from a super hot vacation in the northern hemisphere, my first task was to 
 
 **Finally**, our app with Angular 8 doesn't work on IE11 and Edge anymore. 
 
-Regrading the 3 problems above, the Clarity upgrade, even though it's a tedious job, but is the simplest one to solve. However, the performance issue and the IE11/Edge support are not so easy to figure out why. As I dig further, there are a variety of reasons behind it.
+Regrading the 3 problems above, the Clarity upgrade, even though it's a tedious job, but is the simplest one to solve. On the contrary, the performance issue and the IE11/Edge support are not so easy to figure out why. As I dig further, there are a variety of reasons behind it.
 
 ### 1. Upgrading from Angular 6 to Angular 8, IE 11 doesn't work anymore.
 
@@ -42,11 +42,11 @@ To generate these two bundles of JavaScript files correctly, you have to configu
 not IE 9-11 # For IE 9-11 support, remove 'not'.
 ```
 
-### 2. The Chrome browser launched by Visual Studio is 10 times slower than the normal Chrome.
+### 2. The Chrome browser launched by Visual Studio is 10 times slower than a normal Chrome.
 
 I did a performance profiling in Chrome. The first issue caught my eye is of the same AJAX call, Chrome browser spawn by Visual Studio takes 10 times longer time than a normal Chrome. 
 
-It turns out 'Enable JavaScript debugging for ASP.NET' would make Chrome launched by Visual Studio super slow. Since JavaScript debugging is not really working with Chrome in Visual Studio 2017, I have disabled this option without a thought:
+It turns out **Enable JavaScript debugging for ASP.NET** would make Chrome launched by Visual Studio super slow. Since JavaScript debugging is not really working with Chrome in Visual Studio 2017, I have disabled this option without a thought:
 
 > **Disable JavaScript debugging for ASP.NET**
 ```
@@ -61,7 +61,7 @@ Haha, this is probably the most tricky problem. Why is the same AJAX call takes 
 
 Well, the real problem is with **Promise** and **async/await**. In our app, every HTTP request is turned into a **Promise**. In addition, all of the asynchronous calls are turned into synchronous looking codes with **async/await**.
 
-You remember to support IE 11, I have changed the TypeScript compile target back to **es5**. Apparaently, the generated JavaScript codes has a poor performance. This blog [Compiling async/await to ES3/ES5 in TypeScript](https://mariusschulz.com/blog/compiling-async-await-to-es3-es5-in-typescript) explains how awful JavaScript codes would be if compile **async/await** to **es5**. Having said that, however with Angular 6, even though TypeScripts are compiled to **es5** as well, I didn't feel **async/await** has a such big impact on the performance.
+You remember to support IE 11, I have changed the TypeScript compile target back to **es5**. Apparaently, the generated JavaScript codes to support async/await has a poor performance. This blog [Compiling async/await to ES3/ES5 in TypeScript](https://mariusschulz.com/blog/compiling-async-await-to-es3-es5-in-typescript) explains how awful JavaScript codes would be if compile **async/await** to **es5**. Having said that, however with Angular 6, even though TypeScripts are compiled to **es5** as well, I didn't feel **async/await** has a such big impact on the performance.
 
 Anyway, to improve the AJAX performance, we have to drop support of IE 11 and compile TypeScripts to **es2015** instead. Another reason we can't support IE 11 anymore is because Clarity 2 datagrid is almost not responding in IE 11. When you drag the scrollbar, the page refreshes very slowly.
 
@@ -79,17 +79,56 @@ protected async getPage(): Promise<void> {
 /** This method is called infinitely in Edge browser **/
 protected async getState(): Promise<void> {
     // AJAX calls
+    await this.service.getState();
 }
 ```
 
-**Do not override async methods in typescript!** It fails Edge browser.
+To support **es2015**, **Do not override async methods in typescript!** It fails Edge browser.
 
 ### 5. Angular 8 builds super slow
 
 We know that to support **differential loading**, Angular 8 would build two bundles of JavaScript files, one set to support modern browers, the other set to support legacy browsers. Hence, it takes at least twice the build time as before.
 
-A bad thing is even if you don't care about legacy **es5** browsers, you can't turn off **-es5.js** building. In the **browserslist** file, I have configured 'not IE 9-11', however, **-es5.js** files are still generated. Frustrating!
+In Angular 7, there used to have a setting in **angular.json** file, which specifies whether support es5 browsers or not.
 
-Due to the slow build time, when you run 'ng serve', Chrome browser will timeout from time to time at any code changes. Even at launching the app, Chrome tab would timeout and you have to open a new tab to open the app. This thread is talking about it: https://github.com/angular/angular-cli/issues/14666. 
+> **angular.json**
+```json
+"build": {
+    "es5BrowserSupport":  false
+}
+```
+
+However, in Angular 8 this setting is deprecated. Instead, you have to configure **browserslist** file to tell Angular build which browsers are supported. I don't care about legacy **es5** browsers, and in the **browserslist** file, I have configured 'not IE 9-11'. However, **-es5.js** files are still generated. To figure out why, let's run command to list all of the supported browsers.
+
+> **Supported browsers query**
+```
+npx browserslist
+```
+
+Gee, legacy browsers like 'safari 5.1' are still in the support list. No wonder why **-es5.js** files are still built out. Let's take a closer look at my **browserslist** file to see what's going wrong.
+
+> **browserslist**
+```
+> 0.5%              # It says: I want to support all browsers that have at least .05% of the global browser usage.
+                  # So this will include some really old browsers.
+last 2 versions   # It says: the last 2 versions for each browser, even mobile browsers. But our app is not targeting at mobile devices.
+Firefox ESR       # the latest [Firefox ESR] version.
+not dead          # Don't support outdated browsers
+not IE 9-11       # Don't support IE 9 - 11
+```
+
+Since our app only supports the latest 2 versions of Firefox, Edge and Chrome. I changed the **browserslist** to:
+
+> **browserslist**
+```
+last 2 Chrome versions
+Firefox ESR
+last 2 Firefox versions
+last 2 Edge versions
+not dead
+not IE 9-11
+```
+
+Thus, the build doesn't generate **-es5.js** files anymore.
 
 Alright, these are my diggings. Hope it will help you when you have to upgarde Angular to 8.
