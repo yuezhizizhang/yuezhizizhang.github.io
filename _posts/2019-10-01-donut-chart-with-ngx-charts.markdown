@@ -62,7 +62,7 @@ margins = [10, 20, 10, 20];
 tooltipDisabled = true;
 ```
 
-My only complaint about the library is it's not flexible enough to customize the legend, the labels and the tooltips of the charts. All of the them rely on the **name** field in the data. Hence, it would be very hard if you want to display stuff other than name in the chart. For instance, my data has a percent field, which I hope to display around the pie chart as labels, the only way to do it is:
+My only complaint about the library is it's not flexible enough to customize the legend, the labels and the tooltips of the charts. All of the them rely on the **name** field in the data. Hence, it would be very hard if you want to display stuff other than name in the chart. For instance, my data has a label field, which I hope to display around the pie chart as labels, the only way to do it is:
 
 ```typescript
 <ngx-charts-pie-chart
@@ -74,17 +74,17 @@ My only complaint about the library is it's not flexible enough to customize the
 series = [{
     name: 'Retired',
     value: 20,
-    percent: '20%'
+    label: '20%'
 }, {
     name: 'Employed',
     value: 80,
-    percent: '80%'
+    label: '80%'
 }];
 
 pieChartLabel(series: any[], name: string): string {
     const item = series.filter(data => data.name === name);
     if (item.length > 0) {
-        return item[0].percent;
+        return item[0].label;
     }
     return name;
 }
