@@ -42,7 +42,7 @@ scheme = {
 // Display labels around the pie circle or not
 labels = true;
 
-// Donut chart or Pie chart
+// Pie chart or Donut chart
 doughnut = false;
 ```
 
