@@ -92,4 +92,4 @@ pieChartLabel(series: any[], name: string): string {
 
 For labels, at least there is a **labelFormatting** method for you to customize it. However, for the legend and tooltips, the customize method is not exposed in the PieChartComponent at all.
 
-<iframe src="https://stackblitz.com/edit/angular-qt6kfw?embed=1&file=src/app/app.component.ts" style="width: 100%; height: 400px;"></iframe>
+<iframe src="https://stackblitz.com/edit/ngx-donut-chart?embed=1&file=src/app/app.component.ts" style="width: 100%; height: 400px;"></iframe>
