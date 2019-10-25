@@ -32,8 +32,10 @@ Basically, Observer monitors the Subject, or Observable. Observable notifies the
 
 In Agile, every member is both the Observable and Observer. Whatever we are working on, what obstable we have met, which task we have completed, we have to notify each other.
 
-Everybody's actions are refined and created as tasks, constantly monitored by each other. 
+Is Agile micro-management? Yes it is. Everybody's actions are refined and created as tasks.
 
-So in my opinion, Agile is reactive micro-management.
+Is Agile following the observer pattern? Yes it it. We are monitoring each other and reporting to each other.
 
-From the management perspective, instead of asking the employee what you are busy with, now every employee has to report to their supervisor on a daily basis.
+So Agile is Micro-Management in Observer pattern or so called Reactive Micro-Management
+
+BTW, From the management perspective, instead of asking the employee what you are busy with, now every employee has to report to their supervisors on a daily basis.
