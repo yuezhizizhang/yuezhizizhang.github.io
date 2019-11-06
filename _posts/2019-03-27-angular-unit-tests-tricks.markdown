@@ -176,4 +176,14 @@ function stubGetUsersCount(count: number): jasmine.Spy {
 }
 ```
 
+### No12. How to test Observable?
+
+We test Observables as if they are not asynchronous.
+
+```typescript
+const sub = of(true);
+
+sub.subscribe(state => expect(state).toBeTruthy());
+```
+
 Place these functions into whatever describe block which fits.
