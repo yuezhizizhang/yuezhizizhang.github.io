@@ -42,16 +42,48 @@ fixture.detectChanges();
 
 If you want to test a component's status before initialization, DO NOT call **fixture.detectChanges()**.
 
-### No4. How to click a button?
+### No4. How to get element by id?
+
+There are two ways of query element by id. The first one is easier to Google out:
+
+```typescript
+/**
+ * @param id - '#id'
+ * @return DebugElement
+ */
+function getElementById(id: string): DebugElement {
+  return fixture.debugElement.query(By.css(id));
+}
+```
+
+The above method returns a DebugElement. To access the DOM element of it, use property *'.nativeElement'*.
+
+---
+
+<span style="color: red; font-weight: bold;">&gt;&gt;&gt; Revised <br> The following one is what I recently learnt from Angular documents and I highly recommend:</span>
+
+```typescript
+/**
+ * @param id - '#id'
+ * @return native DOM element
+ */
+function getElementById(id: string): any {
+  return fixture.nativeElement.querySelector(id)
+}
+```
+
+It returns the native DOM element directly.
+
+### No5. How to click a button?
 
 First, locate the button by class name or id. Then, click it.
 
 ```typescript
-const btn: DebugElement = fixture.debugElement.query(By.css('#id'));
-btn.nativeElement.click();
+const btn = fixture.nativeElement.querySelector('#id');
+btn.click();
 ```
 
-### No5. How to get the service instance?
+### No6. How to get the service instance?
 
 Suppose a UsersService is injected into your component. How to get the service instance?
 
@@ -59,7 +91,15 @@ Suppose a UsersService is injected into your component. How to get the service i
 const service: UsersService = fixture.debugElement.injector.get(UsersService);
 ```
 
-### No6. How to test data binding?
+---
+
+<span style="color: red; font-weight: bold;">&gt;&gt;&gt; Revised <br> The following one is what I recently learnt from my new project and I highly recommend:</span>
+
+```typescript
+const service: UsersService = TestBed.get(UsersService);
+```
+
+### No7. How to test data binding?
 
 Data binding is two way. [] is from the component property to the View. For instance, you have a label which is binding to name property. When the name property is updated, we want to make sure the label is updated with the new value.
 
@@ -68,8 +108,8 @@ const dummyName: string = 'newName';
 component.name = dummyName;
 // Update the UI
 fixture.detectChanges();
-const label: DebugElement = fixture.debugElement.query(By.css('#label-id'));
-expect(labe.nativeElement.textContent).toEqual(dummyName);
+const label = fixture.nativeElement.querySelector('#label-id');
+expect(labe.textContent).toEqual(dummyName);
 ```
 
 **fixture.detectChanges()** is doing the trick. Anytime you update the component properties, and hoping the UI is reflecting the changes properly, do call detectChanges to update the UI.
@@ -85,7 +125,7 @@ expect(filterSpy).toHaveBeenCalled();
 
 This looks a bit nasty. We are dispatching the ngModelChange event directly. However, at least this is working after I have tried a hundred other ways which just don't work. You know, sometimes, wrtiting unit testing is very ***frustrating***.
 
-### No7. How to test asynchronous method?
+### No8. How to test asynchronous method?
 
 Suppose we have a users service method, which pulls the number of users from the backend. It returns a Promise which contains the total number of users. How do you stub this asynchronous method?
 
@@ -93,7 +133,7 @@ Suppose we have a users service method, which pulls the number of users from the
 it('Stub the asynchronous method and validates the response', fakeAsync(() => {
   const dummyCount: number = 18;
   // Stub the service method
-  const service: UsersService = fixture.debugElement.injector.get(UsersService);
+  const service: UsersService = TestBed.get(UsersService);
   spyOn(service, 'getTotalCount').and.returnValue(Promise.resolve(dummyCount));
   // ngOnInit
   fixture.detectChanges();
@@ -105,7 +145,7 @@ it('Stub the asynchronous method and validates the response', fakeAsync(() => {
 
 **fakeAsync** and **flush** are doing the tricks here.
 
-### No8. How to mock ngx-translate TranslateService?
+### No9. How to mock ngx-translate TranslateService?
 
 [ngx-translate](https://github.com/ngx-translate/core) is an internationalization (i18n) library. I don't use Angular i18n, because the production build of it only supports AOT compilation. AOT compilation means the locale resources are compiled into JavaScript. Hence, you can't change the locale JSON file on the fly. 
 
@@ -125,7 +165,26 @@ export class TranslateServiceMock {
 }
 ```
 
-### No9. How to mock ngx-translate pipe?
+---
+
+<span style="color: red; font-weight: bold;">&gt;&gt;&gt; Revised <br> The following one is what I recently learnt from my new project and I highly recommend:</span>
+
+In the component.spec.ts:
+```typescript
+const fakeTraslateService = jasmine.createSpyObj<TranslateService>('TranslateService', ['instant']);
+
+{ provide: TranslateService, useValue: fakeTraslateService }
+```
+
+jasmine.createSpyObj creates a mock 'TranslateService' and adds a spy on its 'instant' method.
+
+Suppose later in your test cases, you suppose instant to return different values, you can do it easily by:
+
+```typescript
+const stubTranslate = (value) => fakeTraslateService.instant.and.returnValue(value);
+```
+
+### No10. How to mock ngx-translate pipe?
 
 If you are using ngx-translate pipes, for instance:
 
@@ -157,33 +216,21 @@ declarations: [
 ],  
 ```
 
-### No10. How to make the unit test codes DRY?
+### No11. How to make the unit test codes DRY?
 
-The simplest way is making the repeated codes into functions. For instance, getDebugElement could be a function. StubGetUsers could be another function.
+The simplest way is writing the repeated codes into functions. For instance, getElementById could be an arrow function.
 
 ```typescript
-function getDebugElement(fixture: any, id: string): DebugElement {
-  return fixture.debugElement.query(By.css(id));
-}
+const getElementById = (id) => fixture.nativeElement.querySelector(id);
 
-function getService(fixture: any, service: any): any {
-  return fixture.debugElement.injector.get(service);
-}
-
-function stubGetUsersCount(count: number): jasmine.Spy {
-  const service: UsersService = getService(fixture, UsersService);
-  return spyOn(service, 'getTotalCount').and.returnValue(Promise.resolve(count));
-}
+const getService = (service) => TestBed.get(service);
 ```
 
 ### No12. How to test Observable?
 
-We test Observables as if they are not asynchronous.
+Test Observables as if they are not asynchronous. An simple example is to fetch the query parameters from the route.
 
 ```typescript
-const sub = of(true);
-
-sub.subscribe(state => expect(state).toBeTruthy());
+const route: ActivatedRoute = TestBed.get(ActivatedRoute);
+route.queryParams = of({ uuid: '12344555' });
 ```
-
-Place these functions into whatever describe block which fits.
