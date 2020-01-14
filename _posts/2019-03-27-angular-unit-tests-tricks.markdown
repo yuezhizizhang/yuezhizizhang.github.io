@@ -218,7 +218,7 @@ declarations: [
 
 ### No11. How to make the unit test codes DRY?
 
-The simplest way is writing the repeated codes into functions. For instance, getElementById could be an arrow function.
+The simplest way is writing the repeated codes into functions. For instance, getElementById could be an arrow function, getService is another one.
 
 ```typescript
 const getElementById = (id) => fixture.nativeElement.querySelector(id);
@@ -228,9 +228,80 @@ const getService = (service) => TestBed.get(service);
 
 ### No12. How to test Observable?
 
-Test Observables as if they are not asynchronous. An simple example is to fetch the query parameters from the route.
+Test Observables as if they are not asynchronous. An simple example below shows how to mock the query parameters from the route.
 
 ```typescript
 const route: ActivatedRoute = TestBed.get(ActivatedRoute);
 route.queryParams = of({ uuid: '12344555' });
+```
+
+### No13. How to test Reactive form?
+
+The following example is copying from Angular document [Testing reactive form](https://angular.io/guide/forms-overview#testing-reactive-forms). In the document, it forgets to provide the code snippet of createNewEvent, which I copied from Angular github codes directly.
+
+```typescript
+function createNewEvent(eventName: string, bubbles = false, cancelable = false) {
+  let evt = document.createEvent('CustomEvent');
+  evt.initCustomEvent(eventName, bubbles, cancelable, null);
+  return evt;
+}
+
+describe('view to model', () => {
+  it('should update the value of the input field', () => {
+  const input = fixture.nativeElement.querySelector('input');
+  const event = createNewEvent('input');
+
+  input.value = 'Red';
+  input.dispatchEvent(event);
+
+  expect(fixture.componentInstance.favoriteColorControl.value).toEqual('Red');
+});
+
+describe('model to view', () => {
+  component.favoriteColorControl.setValue('Blue');
+
+  const input = fixture.nativeElement.querySelector('input');
+
+  expect(input.value).toBe('Blue');
+});
+```
+
+### No14. How to test template-driven form?
+
+The following example is copying from Angular document [Testing template-driven form](https://angular.io/guide/forms-overview#testing-template-driven-forms). In the document, it forgets to provide the code snippet of createNewEvent, which I copied from Angular github codes directly.
+
+```typescript
+function createNewEvent(eventName: string, bubbles = false, cancelable = false) {
+  let evt = document.createEvent('CustomEvent');
+  evt.initCustomEvent(eventName, bubbles, cancelable, null);
+  return evt;
+}
+
+describe('view to model', () => {
+  it('should update the favorite color in the component', fakeAsync(() => {
+    const input = fixture.nativeElement.querySelector('input');
+    const event = createNewEvent('input');
+
+    input.value = 'Red';
+    input.dispatchEvent(event);
+
+    fixture.detectChanges();
+
+    expect(component.favoriteColor).toEqual('Red');
+  }));
+});
+
+describe('model to view', () => {
+  it('should update the favorite color on the input field', fakeAsync(() => {
+    component.favoriteColor = 'Blue';
+
+    fixture.detectChanges();
+
+    tick();
+
+    const input = fixture.nativeElement.querySelector('input');
+
+    expect(input.value).toBe('Blue');
+  }));
+});
 ```
