@@ -81,7 +81,7 @@ this.submitForm.get('Username');
 
 And **'Username'** is exactly the key of the Fluent validation error response. Therefore, there is no problem to set Fluent errors back in Username form control.
 
-However, what if the submit form looks like below:
+However, what if the submit form looks like below, in which **Username** is in the nested FormGroup **Profile**:
 
 ```typescript
 this.submitForm = this.formBuilder.group({
@@ -98,9 +98,9 @@ The only way to locate Username form control is by:
 this.submitForm.get('Profile.Username');
 ```
 
-Therefore, get form control by Fluent validation key is not working.
+Thus, get form control by Fluent validation key is not working, because Fluent validation key is **Username**.
 
-How to break down a deep nested FormGroup into flat reusable FormGroup, please read [Building Reusable Forms in Angular](https://coryrylan.com/blog/building-reusable-forms-in-angular).
+Actually, a good way is to break down a deep nested FormGroup into flat reusable FormGroup. Here is a blog I highly recommend [Building Reusable Forms in Angular](https://coryrylan.com/blog/building-reusable-forms-in-angular).
 
 **Secondly, we should not use the PascalCase property name to name the form control.**
 
@@ -126,7 +126,7 @@ this.submitForm = this.formBuilder.group({
 
 However, the Fluent validation error key is starting with Uppercase, the same as the property name in C# class.
 
-To convert the Fluent PascalCase key to Javascript CamelCase key, we have to modify the 'setFluentValidationErrors' method.
+To convert the Fluent PascalCase key to Javascript CamelCase key, we have to modify the **'setFluentValidationErrors'** method.
 
 ```typescript
 Object.entries(err).forEach(([key, value]) => {
