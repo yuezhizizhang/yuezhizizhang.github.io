@@ -8,6 +8,8 @@ I have developed a webpage, tracking the COVID-19 daily data of NSW. The data co
 
 [Visit this page in a new tab](https://yuezhizizhang.github.io/nsw-covid-19){:target="_blank"}
 
+The source codes are at <a href="https://github.com/yuezhizizhang/nsw-covid-19" target="_blank">https://github.com/yuezhizizhang/nsw-covid-19</a>.
+
 <iframe
   src="https://yuezhizizhang.github.io/nsw-covid-19"
   style="width:100%; height:800px;"
