@@ -19,7 +19,7 @@ The kubernetes cluster I'm going to deploy is the simplest one with only **1 mas
 
 All of the following commands are run in the root environment. To switch to root:
 
-```
+```bash
 sudo su
 ```
 
@@ -36,29 +36,29 @@ The requirements of each Ubuntu VM are:
 
 Change the hostname of each Ubuntu VM to a unique name. I changed the hostname to the same as the VM name, so that when I do **ssh**, I know who's who. To change the hostname of a Ubuntu machine:
 
-```cmd
-# vi /etc/hostname
+```bash
+vi /etc/hostname
 ```
 
 Change the hostname to your-new-hostname.
 
-```cmd
-# vi /etc/hosts
+```bash
+vi /etc/hosts
 ```
 
 Change the line of **127.0.1.1** to your-new-hostname.
 
 If you don't want to reboot the VM, run command:
 
-```cmd
-# hostname your-new-hostname
+```bash
+hostname your-new-hostname
 ```
 
 **1.2  Install govc (on controller VM)**
 
 Install govc on the controller VM, which is called "k8s-cli". You can find the govc download links from [https://github.com/vmware/govmomi/releases](https://github.com/vmware/govmomi/releases){:target="_blank"}.
 
-```cmd
+```bash
 curl -L https://github.com/vmware/govmomi/releases/download/v0.22.1/govc_linux_amd64.gz | gunzip > /usr/local/bin/govc
 chmod +x /usr/local/bin/govc
 ```
@@ -67,7 +67,7 @@ chmod +x /usr/local/bin/govc
 
 Firstly, setup the vCenter connection info.
 
-```cmd
+```bash
 export GOVC_INSECURE=1
 export GOVC_URL='https://<VC_IP>'
 export GOVC_USERNAME='VC_Admin_User'
@@ -76,13 +76,13 @@ export GOVC_PASSWORD='VC_Admin_Passwd'
 
 Secondly, retrieve the master and worker VM path. The following command will list all the VMs within the vCenter.
 
-```cmd
+```bash
 govc find / -type m
 ```
 
 Finally, enable disk UUID of the master and worker VM.
 
-```cmd
+```bash
 govc vm.change -vm 'the path of k8s-master-node1' -e="disk.enableUUID=1"
 
 govc vm.change -vm 'the path of k8s-worker-node1' -e="disk.enableUUID=1"
@@ -90,7 +90,7 @@ govc vm.change -vm 'the path of k8s-worker-node1' -e="disk.enableUUID=1"
 
 **1.4  Disable Swap (on master and worker VM)**
 
-```
+```bash
 swapoff -a
 
 vi /etc/fstab
@@ -98,7 +98,7 @@ vi /etc/fstab
 
 Remove the any swap entry from /etc/fstab. Usually, the line looks like below:
 
-```
+```bash
 /dev/mapper/localhost--vg-swap_1 none            swap    sw              0       0
 ```
 
@@ -106,7 +106,7 @@ Remove the any swap entry from /etc/fstab. Usually, the line looks like below:
 
 Please refer to [Letting iptables see bridged traffic](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#letting-iptables-see-bridged-traffic){:target="_blank"}.
 
-```
+```bash
 cat <<EOF > /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
@@ -119,7 +119,7 @@ sysctl --system
 
 Changing the settings such that your container runtime and kubelet use systemd as the cgroup driver. Please refer to [Container runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#distributed-systems){:target="_blank"}.
 
-```cmd
+```bash
 apt update
 apt install ca-certificates software-properties-common apt-transport-https curl -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -149,7 +149,7 @@ systemctl restart docker
 Actually, I didn't install kubectl on the worker node. Please refer to [Installing kubeadm, kubelet and kubectl](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl){:target="_blank"}.
 
 
-```cmd
+```bash
 sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
@@ -166,7 +166,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 The Pod network I chose is [flannel](https://github.com/coreos/flannel). Please refer to [Installing a Pod network add-on](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#pod-network){:target="_blank"}.
 
-```cmd
+```bash
 kubeadm init --pod-network-cidr=10.244.0.0/16
 
 mkdir -p $HOME/.kube
@@ -182,13 +182,13 @@ I have copied a workable flannel to [https://raw.githubusercontent.com/yuezhiziz
 
 Now, the kubernetes cluster is ready. Run command to check if every pod is running.
 
-```cmd
+```bash
 kubectl get pods -n=kube-system
 ```
 
 Print the join command with:
 
-```cmd
+```bash
 kubeadm token create --print-join-command
 ```
 
@@ -196,7 +196,7 @@ kubeadm token create --print-join-command
 
 Print the join command:
 
-```cmd
+```bash
 kubeadm token create --print-join-command
 ```
 
@@ -206,14 +206,14 @@ Copy the join command and run it.
 
 In some cases, the worker node failed to pull the image of flannel. So after joining the cluster, the status of the worker node is "Failed to pull image "quay.io/coreos/flannel:v0.11.0-amd64". Please refer to [Where I can get docker image of flannel](https://github.com/coreos/flannel/issues/1223){:target="_blank"} to learn more.
 
-```cmd
+```bash
 wget https://github.com/coreos/flannel/releases/download/v0.11.0/flanneld-v0.11.0-amd64.docker
 docker load < flanneld-v0.11.0-amd64.docker
 ```
 
 Now, run command to check both the worker node is ready.
 
-```cmd
+```bash
 kubectl get nodes
 ```
 
@@ -223,14 +223,14 @@ Congratulations! Your Kubernetes cluster is deployed.
 
 Let's deploy a Pod service [Tanzu Octant](https://github.com/vmware-tanzu/antrea/blob/master/docs/octant-plugin-installation.md){:target="_blank"}. It's a Kubernetes dashboard.
 
-```cmd
+```bash
 kubectl create secret generic octant-kubeconfig --from-file=/etc/kubernetes/admin.conf -n kube-system
 kubectl apply -f https://raw.githubusercontent.com/vmware-tanzu/antrea/master/build/yamls/antrea-octant.yml
 ```
 
 Get the NodePort of the octant pod service:
 
-```cmd
+```bash
 kubectl describe service antrea-octant -n kube-system
 ```
 
