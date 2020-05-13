@@ -235,7 +235,3 @@ kubectl describe service antrea-octant -n kube-system
 ```
 
 Now, you are able to monitor your Kubernetes cluster with <span style="text-decoration: underline;">http://&lt;master_node_ip_address&gt;:&lt;NodePort&gt;</span>.
-
-### 6. kubectl Cheat Sheet
-
-[kubectl cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/){:target="_blank"}
