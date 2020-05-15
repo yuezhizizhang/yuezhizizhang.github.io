@@ -33,12 +33,13 @@ sudo rm -rf $GOPATH/pkg/mod/<pkg_name>
 
 ### 5. Go Module
 
+- [Why is GO111MODULE everywhere, and everything about Go Modules](https://dev.to/maelvls/why-is-go111module-everywhere-and-everything-about-go-modules-24k){:target="_blank"}
+
 To run Go codes outside of $GOPATH/src, use Go Modules:
 
 ```bash
 go mod init <module_name>
 ```
-- [Why is GO111MODULE everywhere, and everything about Go Modules](https://dev.to/maelvls/why-is-go111module-everywhere-and-everything-about-go-modules-24k){:target="_blank"}
 
 ### 6. Debug Go in VSCode in WSL
 
