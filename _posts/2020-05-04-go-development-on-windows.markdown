@@ -54,7 +54,7 @@ No. You can't debug Go in WSL. It's a known limitation of WSL. It is addressed i
 
 ### 8. Go limitations
 The limitations I don't like:
- - Go build errors are not clear
+ - Go build errors are vague
  - Go packages management is a mess
  - No lambda method
  - No generic collection method, like filter, map, sort
