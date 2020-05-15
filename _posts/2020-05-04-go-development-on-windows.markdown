@@ -9,6 +9,8 @@ categories: "golang Windows"
 - [Install Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10){:target="_blank"}
 - [Setting Up Docker for Windows and WSL to Work Flawlessly](https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly){:target="_blank"}
 
+- [Sharing SSH keys between Windows and WSL](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/){:target="_blank"}
+
 ### 2. Install and Upgrade Go
 
 - [Install Go on Ubuntu](https://www.linode.com/docs/development/go/install-go-on-ubuntu/){:target="_blank"}
@@ -48,6 +50,11 @@ No. You can't debug Go in WSL. It's a known limitation of WSL. It is addressed i
 
 - [Go Introductory Tutorials](https://medium.com/rungo/go-introductory-tutorials-896aeda0fb8a){:target="_blank"}
 - [Go by Examples](https://gobyexample.com/){:target="_blank"}
+
+
+### 8. Go Modules
+
+- [Why is GO111MODULE everywhere, and everything about Go Modules](https://dev.to/maelvls/why-is-go111module-everywhere-and-everything-about-go-modules-24k){:target="_blank"}
 
 ### 8. Go limitations
 The limitations I don't like:
