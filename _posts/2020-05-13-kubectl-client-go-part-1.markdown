@@ -4,6 +4,12 @@ title:  "Kubectl and client-go Part 1"
 categories: "kubernetes kubectl client-go"
 ---
 
+- [Kubectl and client-go Part 1 Clientset and Nodes](http://yuezhizizhang.github.io/kubernetes/kubectl/client-go/2020/05/13/kubectl-client-go-part-1.html){:target="_blank"}
+
+- [Kubectl and client-go Part 2 Pods](http://yuezhizizhang.github.io/kubernetes/kubectl/client-go/2020/05/13/kubectl-client-go-part-2.html){:target="_blank"}
+
+- [Kubectl and client-go Part 3 Secrets and Apply File](http://yuezhizizhang.github.io/kubernetes/kubectl/client-go/2020/05/13/kubectl-client-go-part-3.html){:target="_blank"}
+
 For the past two weeks, I've been learning the APIs of [client-go](https://github.com/kubernetes/client-go){:target="_blank"}. **client-go** is the official client library of Kubernetes, which is used internally by Kubernetes as well. The Kubernetes command line tool **kubectl** is built on **client-go**.
 
 For a Kubernetes starter like me, it's not an easy job. One reason is because there are very few discussions about **client-go** online. So for any problems you met, there is no such easy way of Googling out an answer. The only way you can do is digging out an answer from the source codes by yourself. 

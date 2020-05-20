@@ -4,9 +4,11 @@ title:  "Kubectl and client-go Part 3"
 categories: "kubernetes kubectl client-go"
 ---
 
-- [Kubectl and client-go Part 1](http://yuezhizizhang.github.io/kubernetes/kubectl/client-go/2020/05/13/kubectl-client-go-part-1.html){:target="_blank"}
+- [Kubectl and client-go Part 1 Clientset and Nodes](http://yuezhizizhang.github.io/kubernetes/kubectl/client-go/2020/05/13/kubectl-client-go-part-1.html){:target="_blank"}
 
-- [Kubectl and client-go Part 2](http://yuezhizizhang.github.io/kubernetes/kubectl/client-go/2020/05/13/kubectl-client-go-part-2.html){:target="_blank"}
+- [Kubectl and client-go Part 2 Pods](http://yuezhizizhang.github.io/kubernetes/kubectl/client-go/2020/05/13/kubectl-client-go-part-2.html){:target="_blank"}
+
+- [Kubectl and client-go Part 3 Secrets and Apply File](http://yuezhizizhang.github.io/kubernetes/kubectl/client-go/2020/05/13/kubectl-client-go-part-3.html){:target="_blank"}
 
 ### Secrets
 
