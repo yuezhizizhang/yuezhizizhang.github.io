@@ -21,6 +21,6 @@ Click **Next: Build**. In this step, it's crucial that you enter the right **App
 All done. Simply click **Review + create**. Azure will generate a new Workflow file into your GitHub repository. You can find it in the [GitHub Actions](https://github.com/yuezhizizhang/nsw-covid-19/actions){:target="_blank"}. And it will trigger the CI/CD pipeline. When the build is successfully, you are able to [visit your app hosted on Azure](
 https://lemon-desert-0bd974800.azurestaticapps.net){:target="blank"}. You can find the Azure URL in your Azure portal.
 
-Although the example I'm giving is an Angular app, but it's the same super easy for React or other static web applications. All you have to do is pick up your GitHub repository, choose the right branch, and specifiy the right built output location. That's it.
+Although the example I'm giving is an Angular app, but it's the same super easy for React or other static web applications. All you have to do is pick up your GitHub repository, choose the right branch, and specifiy the right built output location. That's it. The build, deploy process are automated by GitHub and Azure.
 
 **Azure Static Web Apps is free right now.**
