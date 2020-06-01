@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "Some Thoughts about being a Newbie"
+categories: "design"
+---
+
+I'm starting a new Project in the [Tanzu](https://tanzu.vmware.com/tanzu){:target="_blank"} team. Because I'm totally new to Container and Kubernetes technology, I have a lot to learn and think about. Following two questions keep popping up in my head.
+
+### What makes me a newbie?
+
+I'm a newbie because I don't know some super easy stuff. It's not some complex problems which puzzle me, on the contrary, it's always the simplest fundamental knowledge which makes me scratch my head all day long. I will give you an example. It puzzled me for a whole day but solved by my teammate's one sentence.
+
+It's about copying a new file to your container and commit it to the image.
+
+```bash
+# List the docker containers and find the container id
+docker ps
+# Copy the file to the container
+docker cp <your new file> $containerID:/usr/local/bin/
+# Commit the container to the image
+docker commit $containerID <image name>
+# Restart the container
+docker restart $containerID
+```
+
+My problem is after I restarted the container, the container was down. It's because I forgot to make the file executable before I copied it to the container. Thus the container couldn't run after restart. Since the container was down, when I run "docker ps", I could not find the container anymore.
+
+What should I do? I googled all day about how to copy a file into the docker image in the same way as I copy a file into the file system. But it turned out docker is not storing files in the same way as file system does. Until in the standup, I raised the question and one of my teammate mentioned that even when a container is dead, you can still find it by running:
+
+```bash
+docker ps -a
+```
+
+Therefore, I'm still able to copy the file to a dead container in the same way as copying it to a running container as above. 
+
+Haha, I don't even know when a container is dead, it's still there in docker. I thought a container is like process, when it's down, it's gone.
+
+See, a newbie like me is always puzzled by the simplest fundamentals. 
+
+### What makes a good documentation?
+
+In the team, there are so many documents. Why don't the documents help a newbie like me?
+
+I find developers are good at listing points, but are poor at answering questions. The documents are not helpful at all because they are merely a pile of facts. As a newbie, I'm not able to cosume the facts to solve my specific questions.
+
+It reminds me how do we developers usually communicating with our customers. For a developer, he might say my product has this, this and this, blabla feature. But to a customer, he might ask I don't care, just tell me how could I solve my problem. The developer might be angry hearing that, because I've given you this, this and this, why can't you solve your damn little problem?
+
+But when I become a customer, I really don't care about what do you have. All I care about is how it might help me with my own problems. I realized how important that we should organize our documents around questions and problems, rather than listing facts. It applies to our development as well. When we develop a new feature, we should ask about what user scenario it applies to? How it could help our customers solve a specific problem? Only in that way, could we develop something useful.
