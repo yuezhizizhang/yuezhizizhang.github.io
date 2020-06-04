@@ -16,6 +16,8 @@ I'm happy with my progress so far. I'm to the point that I'm able to write any c
 
 ### Resources
 
+- [Kubernetes: Up and Running (A free book by Tanzu team)](https://tanzu.vmware.com/content/ebooks/kubernetes-up-running-dive-into-the-future-of-infrastructure){:target="_blank"}
+
 - [Kubernetes 1.8 API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/){:target="_blank"}
 
 - [Kubernetes API Conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md){:target="_blank"}
