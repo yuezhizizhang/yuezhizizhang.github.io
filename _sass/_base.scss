@@ -133,6 +133,17 @@ code {
     border: 1px solid $grey-color-light;
     border-radius: 3px;
     background-color: #FAEBD7;
+    font-family: Monaco,Menlo,Consolas,Courier New,monospace!important;
+    font-size: 15px;
+    line-height: 1.50001;
+    font-variant-ligatures: none;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: normal;
+    -webkit-tab-size: 4;
+    -moz-tab-size: 4;
+    tab-size: 4;
 }
 
 code {
@@ -203,4 +214,12 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+.code {
+    padding: 2px 3px;
+    border: 1px solid rgba(10,10,10,.13);
+    border-radius: 3px;
+    background-color: rgba(30,30,30,.04);
+    color: #e01e5a;
 }
