@@ -37,3 +37,5 @@ To run SpecFlow with xUnit.net testing framework, we have to install the followi
 Pluralsight has a very good course on SpecFlow [Business Readable Automated Tests with SpecFlow 2.0](https://www.pluralsight.com/courses/specflow-2-0-business-readable-automated-tests){:target="_blank"}.
 
 Or else [@astridraina](https://medium.com/@astridraina){:target="_blank"} has [4 sessions of tutorials](https://medium.com/@astridraina/specflow-part-1-the-first-steps-9f762302af8c){:target="_blank"} on SpecFlow which are equivalently good.
+
+TestProject also has a tutorial on it [Get Started with SpecFlow in your Test Automation Project](https://blog.testproject.io/2019/11/21/get-started-with-specflow-in-your-test-automation-project/){:target="_blank"}.
