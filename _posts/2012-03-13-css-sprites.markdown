@@ -12,7 +12,7 @@ Not surprisingly, it turns out to be a must-to-know CSS technique called CSS Spr
 
 How to implement sprites with CSS? Generally speaking, firstly, we have to merge the icons into one big sprite image via Photoshop or any other kind of image processing tool. Next, we set the sprite image as the background image. Finally, we could display any part of the image via shifting the background position.
 
-The top picture in this post is a demo I did applying CSS sprites.  I merged a series of apple products into one image (the icons are downloaded from [Icon Archive](http://www.iconarchive.com/)). Each icon is of the size 64px * 64px. All the icons are aligned side by side, without gaps between them. Therefore, the whole sprite image is of the size 256px * 64px.
+The top picture in this post is a demo I did applying CSS sprites.  I merged a series of apple products into one image (the icons are downloaded from [Icon Archive](http://www.iconarchive.com/){:target="_blank"}) (Or else you could try with [Favicon Generator](https://www.websiteplanet.com/webtools/favicon-generator/){:target="_blank"}). Each icon is of the size 64px * 64px. All the icons are aligned side by side, without gaps between them. Therefore, the whole sprite image is of the size 256px * 64px.
 
 ![Cascading Selector](/assets/2012-03-13-css-sprites-1.png "css sprites")
 
